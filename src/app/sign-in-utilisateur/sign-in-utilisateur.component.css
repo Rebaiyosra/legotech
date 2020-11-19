@@ -48,12 +48,13 @@ button:hover {
 
 .limiter {
   width: 100%;
+  height:100%;
   margin: 0 auto;
 }
 
 .container-login100 {
-  width: 100%;  
-  min-height: 100vh;
+  width: 99%;  
+  min-height: 95vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -62,7 +63,7 @@ button:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 10px;
   background: #9053c7;
   background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
   background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
