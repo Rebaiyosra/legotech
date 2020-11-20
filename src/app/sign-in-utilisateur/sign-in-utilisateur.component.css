@@ -1,18 +1,37 @@
+.lien{
+	font-family: Poppins-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: blue;
+  margin: 0px;
+  text-align: center;
+ 
+}
+
+
+
+/*---------------------------------------------*/
 
 
 p {
 	font-family: Poppins-Regular;
-	font-size: 17px;
+	font-size: 18px;
 	line-height: 1.7;
-	color: #00008B;
-	margin: 0px;
+	color: #666666;
+  margin: 0px;
+  margin-bottom: 21px;
 }
 
+
+
+/*---------------------------------------------*/
 input {
 	outline: none;
-  border: none;
- 
+	border: none;
 }
+
+
+
 input:focus::-webkit-input-placeholder { color:transparent; }
 input:focus:-moz-placeholder { color:transparent; }
 input:focus::-moz-placeholder { color:transparent; }
@@ -25,36 +44,28 @@ input:-moz-placeholder { color: #999999; }
 input::-moz-placeholder { color: #999999; }
 input:-ms-input-placeholder { color: #999999; }
 
-.vl {
-    border-left: 2px solid #999999;
-    height: 300px;
-    position: absolute;
-    left: 50%;
-   
-  }
 
+
+/*---------------------------------------------*/
 button {
 	outline: none !important;
 	border: none;
 	background: transparent;
 }
 
-button:hover {
-	cursor: pointer;
-}
 
 
 
 
-.limiter {
-  width: 100%;
-  height:100%;
-  margin: 0 auto;
-}
+
+/*//////////////////////////////////////////////////////////////////
+[ login ]*/
+
+
 
 .container-login100 {
-  width: 99%;  
-  min-height: 95vh;
+  width: 100%;  
+  min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -63,60 +74,47 @@ button:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 15px;
   background: #9053c7;
   background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
   background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
   background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
   background: linear-gradient(-135deg, #c850c0, #4158d0);
 }
-.lien{
-  text-align: center;
-}
+
 .wrap-login100 {
-  width: 720px;
-  height: 350px;  
-  background: rgba(255, 255, 255, 0.7);
+  width: 960px;
+  background:rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   overflow: hidden;
+
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 100px 130px 33px 95px;
+  justify-content: space-around;
+  padding: 50px 20px 50px 20px;
 }
 
 /*------------------------------------------------------------------
 [  ]*/
 .login100-pic {
   width: 316px;
-  margin-bottom: 150px;
-  margin-top: 0px;
 }
 
-
+.login100-pic img {
+  max-width: 100%;
+}
 
 
 /*------------------------------------------------------------------
 [  ]*/
 .login100-form {
   width: 290px;
-  margin-bottom: 150px;
-  margin-top: 0px;
 }
-.title{
-  font-family: Poppins-Bold;
-  font-size: 24px;
-  color: #00008B;
-  line-height: 1.2;
-  width: 100%;
-  display: block;
-  font-weight: bold;
-  padding-bottom: 25px;
-}
+
 .login100-form-title {
   font-family: Poppins-Bold;
   font-size: 24px;
@@ -126,15 +124,25 @@ button:hover {
   font-weight: bold;
   width: 100%;
   display: block;
-  padding-bottom: 25px;
- 
+  text-transform: uppercase;
+  padding-bottom: 45px;
 }
 
-
+.title {
+  font-family: Poppins-Bold;
+  font-size: 20px;
+  color: #00008B;
+  line-height: 1.2;
+  font-weight: bold;
+  width: 100%;
+  display: block;
+  text-transform: uppercase;
+  padding-bottom: 40px;
+}
 /*---------------------------------------------*/
 .wrap-input100 {
   position: relative;
-  width: 75%;
+  width: 100%;
   z-index: 1;
   margin-bottom: 10px;
 }
@@ -144,18 +152,18 @@ button:hover {
   font-size: 15px;
   line-height: 1.5;
   color: #666666;
-  margin-bottom: 15px;
-
+  margin-bottom: 20px;
   display: block;
   width: 100%;
-  background: #f3f1f1;
+  background: #e6e6e6;
   height: 50px;
   border-radius: 25px;
   padding: 0 30px 0 68px;
 }
 
 
-
+/*------------------------------------------------------------------
+[ Focus ]*/
 .focus-input100 {
   display: block;
   position: absolute;
@@ -236,13 +244,13 @@ button:hover {
   font-family: Montserrat-Bold;
   font-size: 15px;
   line-height: 1.5;
-  color: #00008B;
+  color: #fff;
   text-transform: uppercase;
-  font-weight: bold;
+
   width: 80%;
   height: 50px;
   border-radius: 25px;
-  background: whitesmoke;
+  background: #57b846;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -304,3 +312,88 @@ button:hover {
 }
 
 
+/*------------------------------------------------------------------
+[ Alert validate ]*/
+
+.validate-input {
+  position: relative;
+}
+
+.alert-validate::before {
+  content: attr(data-validate);
+  position: absolute;
+  max-width: 70%;
+  background-color: white;
+  border: 1px solid #c80000;
+  border-radius: 13px;
+  padding: 4px 25px 4px 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 8px;
+  pointer-events: none;
+
+  font-family: Poppins-Medium;
+  color: #c80000;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+
+  visibility: hidden;
+  opacity: 0;
+
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+.alert-validate::after {
+  content: "\f06a";
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+  color: #c80000;
+  font-size: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 13px;
+}
+
+.alert-validate:hover:before {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .alert-validate::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.vl {
+  border-left: 2px solid #999999;
+  height: 300px;
+  position: absolute;
+  left: 48%;
+ 
+}
+.mobile{display: block}
+@media (min-width:992px){
+  .mobile{
+    display: none
+  }
+
+}
+@media (max-width :992px){
+  .vl{
+    display: none;
+  }
+}

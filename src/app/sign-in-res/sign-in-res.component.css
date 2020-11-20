@@ -39,14 +39,6 @@ button:hover {
 	cursor: pointer;
 }
 
-
-
-
-.limiter {
-  width: 100%;
-  margin: 0 auto;
-  
-}
 .container-login100 {
     width: 100%;  
     min-height: 100vh;
@@ -62,15 +54,15 @@ button:hover {
 
 
 .wrap-login100 {
-  width: 320px;
+  width: 450px;
   position: relative;
   left:50%;
-  height: 370px;  
+  height: 450px;  
   background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   overflow: hidden;
   margin-top: 60px;  
-  padding: 80px 130px 33px 95px;
+  padding: 50px 50px 20px 50px;
 }
 
 /*------------------------------------------------------------------
@@ -82,9 +74,8 @@ button:hover {
 [  ]*/
 .login100-form {
   width: 290px;
-  margin-bottom: 150px;
-  margin-top: 0px;
-  margin-left: 40px;
+  position: relative;
+  left: 10%;
   
 }
 
@@ -98,7 +89,7 @@ button:hover {
   width: 100%;
   display: block;
   text-transform: uppercase;
-  padding-bottom: 55px;
+  margin-bottom: 55px;
  
 }
 
@@ -119,7 +110,7 @@ button:hover {
   margin-bottom: 15px;
 
   display: block;
-  width: 70%;
+  width: 100%;
   background: #f3f1f1;
   height: 50px;
   border-radius: 25px;
@@ -225,9 +216,7 @@ button:hover {
   transition: all 0.4s;
 }
 
-.login100-form-btn:hover {
-  background: #333333;
-}
+
 
 
 
@@ -239,12 +228,16 @@ button:hover {
 @media (max-width: 992px) {
   .wrap-login100 {
     padding: 177px 90px 33px 85px;
+   position: relative ;
+   left: 5%;
   }
-
+ .container-login100{
+   align-items: center;
+ }
   
 
   .login100-form {
-    width: 50%;
+    width: 10%;
   }
  
 }
