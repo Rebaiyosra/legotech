@@ -9,13 +9,13 @@ body{
     padding: 3%;
 }
 .lego{
-    font-size: 25px;
     text-transform: uppercase;
     font-weight: bold;
     background: linear-gradient(to right, #00c6ff 0%, #a22fb9 65%, #510461 100%);
     -webkit-background-clip: text;
     background-clip: text;
-	-webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    margin-right: 30px;
 }
 .register-left{
     text-align: center;
