@@ -1,261 +1,101 @@
-
-
-p {
-	font-family: Poppins-Regular;
-	font-size: 17px;
-	line-height: 1.7;
-	color: #00008B;
-	margin: 0px;
+.login-container{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 17%;
 }
 
-input {
-	outline: none;
+
+.login-form-1{
+  padding: 9%;
+  background:#0062cc;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 25px;
+}
+.login-form-1 h3{
+  text-align: center;
+  margin-bottom:12%;
+  color: #fff;
+  font-family: cursive
+}
+
+
+.login-form-1 .btnSubmit{
+  font-weight: 600;
+  width: 70%;
+  text-align: center;
   border: none;
- 
-}
-
-
-input:focus::-webkit-input-placeholder { color:transparent; }
-input:focus:-moz-placeholder { color:transparent; }
-input:focus::-moz-placeholder { color:transparent; }
-input:focus:-ms-input-placeholder { color:transparent; }
-
-
-
-input::-webkit-input-placeholder { color: #999999; }
-input:-moz-placeholder { color: #999999; }
-input::-moz-placeholder { color: #999999; }
-input:-ms-input-placeholder { color: #999999; }
-
-
-
-button {
-	outline: none !important;
-	border: none;
-	background: transparent;
-}
-
-button:hover {
-	cursor: pointer;
-}
-
-.container-login100 {
-    width: 100%;  
-    min-height: 100vh;
-   
-    align-items: center;
-    padding: 15px;
-    background: #9053c7;
-    background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: linear-gradient(-135deg, #c850c0, #4158d0);
-  }
-
-
-.wrap-login100 {
-  width: 450px;
-  position: relative;
-  left:50%;
-  height: 450px;  
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 60px;  
-  padding: 50px 50px 20px 50px;
-}
-
-/*------------------------------------------------------------------
-[  ]*/
-
-
-
-/*------------------------------------------------------------------
-[  ]*/
-.login100-form {
-  width: 290px;
-  position: relative;
-  left: 10%;
+  padding:2%;
+  border-radius: 25px;
+  color: #0062cc;
+  background-color: #fff;
+  font-family: cursive;
   
 }
 
-.login100-form-title {
-  font-family: Poppins-Bold;
-  font-size: 24px;
-  color: #00008B;
-  line-height: 1.2;
-  text-align: center;
-  font-weight: bold;
-  width: 100%;
-  display: block;
-  text-transform: uppercase;
-  margin-bottom: 55px;
+.login-form-1 .btnSubmit:hover{
+  
+  background-color: rgb(91, 119, 128);
+  color:#fff;
  
 }
-
-
-/*---------------------------------------------*/
-.wrap-input100 {
-  position: relative;
-  width: 100%;
-  z-index: 1;
-  margin-bottom: 20px;
-}
-
-.input100 {
-  font-family: Poppins-Medium;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #666666;
-  margin-bottom: 15px;
-
-  display: block;
-  width: 100%;
-  background: #f3f1f1;
-  height: 50px;
-  border-radius: 25px;
-  padding: 0 30px 0 68px;
-}
-
-
-
-.focus-input100 {
-  display: block;
-  position: absolute;
-  border-radius: 25px;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  box-shadow: 0px 0px 0px 0px;
-  color: rgba(87,184,70, 0.8);
-}
-
-.input100:focus + .focus-input100 {
-  -webkit-animation: anim-shadow 0.5s ease-in-out forwards;
-  animation: anim-shadow 0.5s ease-in-out forwards;
-}
-
-@-webkit-keyframes anim-shadow {
-  to {
-    box-shadow: 0px 0px 70px 25px;
-    opacity: 0;
-  }
-}
-
-@keyframes anim-shadow {
-  to {
-    box-shadow: 0px 0px 70px 25px;
-    opacity: 0;
-  }
-}
-
-.symbol-input100 {
-  font-size: 15px;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  border-radius: 25px;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding-left: 35px;
-  pointer-events: none;
-  color: #666666;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-.lien{
-  text-align: center;
-}
-.input100:focus + .focus-input100 + .symbol-input100 {
-  color: #57b846;
-  padding-left: 28px;
-}
-
-/*------------------------------------------------------------------
-[ Button ]*/
-.container-login100-form-btn {
-  width: 100%;
-
+.btnContainer{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 20px;
+}
+a{
+  text-align: center; 
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.login-form-1 .ForgetPwd{
+  
+  text-align: center;
+  font-family: cursive
 }
 
-.login100-form-btn {
-  font-family: Montserrat-Bold;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #00008B;
+a:hover{
+  color:rgb(7, 222, 250);
+  font-weight: 600;
+  text-decoration: none;
+}
+input{
+  border-radius: 25px;
+  font-family: cursive;
+}
+
+/*-------------------------------------------------------------*/
+.lego{
+  font-size: 25px;
   text-transform: uppercase;
   font-weight: bold;
-  width: 80%;
-  height: 50px;
-  border-radius: 25px;
-  background: whitesmoke;
+  background: linear-gradient(to right, #00c6ff 0%, #a22fb9 65%, #510461 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+-webkit-text-fill-color: transparent;
+
+    margin-bottom: 5%;
+}
+.login-logo{
+  text-align: center;
+  color: #fff;
+  margin-top: 4%;
+}
+
+
+.login-logo img{
+  margin-top: 17%;
   
-  align-items: center;
-  padding: 0 25px;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
+  width: 200px;
+  -webkit-animation: mover 2s infinite  alternate;
+  animation: mover 1s infinite  alternate;
 }
-
-
-
-
-
-/*------------------------------------------------------------------
-[ Responsive ]*/
-
-
-
-@media (max-width: 992px) {
-  .wrap-login100 {
-    padding: 177px 90px 33px 85px;
-   position: relative ;
-   left: 5%;
-  }
- .container-login100{
-   align-items: center;
- }
-  
-
-  .login100-form {
-    width: 10%;
-  }
- 
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
 }
-
-@media (max-width: 768px) {
-  .wrap-login100 {
-    padding: 100px 80px 33px 80px;
-  }
-
-  .login100-form {
-    width: 100%;
-  }
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
 }
-
-@media (max-width: 576px) {
-  .wrap-login100 {
-    padding: 100px 15px 33px 15px;
-  }
-}
-
-

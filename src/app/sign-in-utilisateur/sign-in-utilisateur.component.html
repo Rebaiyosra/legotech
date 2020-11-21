@@ -1,55 +1,38 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
-<div class="limiter">
-    <div class="container-login100">
-        <div class="wrap-login100">
-            <form class="login100-form validate-form">
-                <span class="login100-form-title">
-                    Connexion
-                </span>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-                <div class="wrap-input100 form-group">
-                    <input class="input100 form-control" type="text" name="email" placeholder="Nom d'utilisateur" required>
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="fa fa-envelope" ></i>
-                    </span>
+<div class="container login-container">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <h3>Connexion</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nom d'utilisateur" value="" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Mot de passe" value="" required/>
+                        </div>
+                        <div class="btnContainer form-group ">
+                            <input type="submit" class="btnSubmit" value="Connexion" />
+                        </div>
+                        <div class="ForgetPwd form-group">
+                            <a href="#" >Mot de passe oublié ?</a>
+                        </div>
+                    </form>
                 </div>
-
-                <div class="wrap-input100 form-group" >
-                    <input class="input100 form-control" type="password" name="pass" placeholder="Mot de passe" required>
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="fa fa-lock" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <div class="lien">
-                <a href="#" >Mot de passe oublié ?</a>
-                </div>
-                <div class="container-login100-form-btn">
-                    <input type="submit" value="Connexion" class="login100-form-btn">
-                </div>
-
-              
-
-                
-            </form>
-            <div class="vl"></div>
-            <div class="login100-pic ">
-                <span class="title">
-                    Je suis un nouveau Client 
-                </span>
-                <p>
-                    Bienvenue ! <br>
-                    Pour Commander et accéder à nos services, il est nécessaire de vous identifier et donc de créer
-                    un compte utilisateur qui nous offre une multitude d'avantages.
-                </p>
-                <div class="container-login100-form-btn">
-                    <button class="login100-form-btn" (click)="onRegister()">
-                        Créer votre compte
-                    </button>
+                <div class="col-md-5 login-form-2">
+                    <div class="login-logo">
+                        <img src="assets/images/digital.png" alt=""/>
+                    </div>  
+                        <div class="cnx">
+                           <p>Vous n'avez pas de compte?</p>
+                        </div>
+                        <div class="lien">
+                            <input type="submit" value="S'inscrire" class="btnSubmit" [routerLink]="['/register-utilisateur']"/>
+                        </div>
+                    
                 </div>
             </div>
-            </div>
-            
-    </div>
-</div>
+        </div>

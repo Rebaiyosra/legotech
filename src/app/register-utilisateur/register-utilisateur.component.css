@@ -1,11 +1,6 @@
-body{
-    background-size: 100% 100%;
-}
+
 .register{
-    background: url(../../assets/images/back.jpg);
-    background-position: center;
-    background-repeat: repeat;
-    background-size: cover;
+   
     padding: 3%;
 }
 .lego{
@@ -19,7 +14,7 @@ body{
 }
 .register-left{
     text-align: center;
-    color: #fff;
+    color: #0062cc;
     margin-top: 4%;
 }
 .register-left input{
@@ -27,11 +22,10 @@ body{
     border-radius: 1.5rem;
     padding: 2%;
     width: 60%;
-    background: #f8f9fa;
+    background: #0062cc;
     font-weight: bold;
-    color: #383d41;
-    margin-top: 30%;
-    margin-bottom: 3%;
+    color: #fff;
+    margin-top: 10%;
     cursor: pointer;
 }
 .register-right{
@@ -75,6 +69,7 @@ body{
     width: 50%;
     cursor: pointer;
 }
+
 .register .nav-tabs{
     margin-top: 3%;
     border: none;

@@ -7,6 +7,7 @@ import { SignInUtilisateurComponent } from './sign-in-utilisateur/sign-in-utilis
 import { SignInResComponent } from './sign-in-res/sign-in-res.component';
 import { RegisterUtilisateurComponent } from './register-utilisateur/register-utilisateur.component';
 import { RegisterResponsableComponent } from './register-responsable/register-responsable.component';
+import { MenuUtilisateurComponent } from './menu-utilisateur/menu-utilisateur.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { RegisterResponsableComponent } from './register-responsable/register-re
     SignInUtilisateurComponent,
     SignInResComponent,
     RegisterUtilisateurComponent,
-    RegisterResponsableComponent
+    RegisterResponsableComponent,
+    MenuUtilisateurComponent
   ],
   imports: [
     BrowserModule,
