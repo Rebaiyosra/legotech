@@ -11,6 +11,10 @@
     margin-right: 10%;
     margin-left: 10%;
 }
+.form-control{
+    border-radius: 25px;
+    width: 75%;
+}
 .btn-primary{
     float: right;
 }
