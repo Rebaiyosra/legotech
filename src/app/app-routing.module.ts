@@ -5,7 +5,8 @@ import { RegisterResponsableComponent} from './register-responsable/register-res
 import { SignInUtilisateurComponent} from './sign-in-utilisateur/sign-in-utilisateur.component';
 import { SignInResComponent} from './sign-in-res/sign-in-res.component';
 import{UtilisateursListeComponent} from './utilisateurs-liste/utilisateurs-liste.component';
-import{ResponsablesListeComponent} from './responsables-liste/responsables-liste.component'
+import{ResponsablesListeComponent} from './responsables-liste/responsables-liste.component';
+import { ArticlesListComponent } from './articles-list/articles-list.component';
 const routes: Routes = [
   {path:'register-utilisateur', component:RegisterUtilisateurComponent},
   {path:'register-responsable', component:RegisterResponsableComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'sign-res', component:SignInResComponent},
   {path:'liste-utilisateur', component:UtilisateursListeComponent},
   {path:'liste-responsable', component:ResponsablesListeComponent},
+  {path:'liste-article',component:ArticlesListComponent }
   ];
 
 @NgModule({

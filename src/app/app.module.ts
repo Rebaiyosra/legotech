@@ -11,6 +11,9 @@ import { MenuUtilisateurComponent } from './menu-utilisateur/menu-utilisateur.co
 import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 import { UtilisateursListeComponent } from './utilisateurs-liste/utilisateurs-liste.component';
 import { ResponsablesListeComponent } from './responsables-liste/responsables-liste.component';
+import { ArticlesListComponent } from './articles-list/articles-list.component';
+import { MenuResponsableArticleComponent } from './menu-responsable-article/menu-responsable-article.component';
+
 
 
 
@@ -24,7 +27,10 @@ import { ResponsablesListeComponent } from './responsables-liste/responsables-li
     MenuUtilisateurComponent,
     MenuAdminComponent,
     UtilisateursListeComponent,
-    ResponsablesListeComponent
+    ResponsablesListeComponent,
+    ArticlesListComponent,
+    MenuResponsableArticleComponent,
+    
   ],
   imports: [
     BrowserModule,
