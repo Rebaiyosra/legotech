@@ -8,6 +8,10 @@ import { SignInResComponent } from './sign-in-res/sign-in-res.component';
 import { RegisterUtilisateurComponent } from './register-utilisateur/register-utilisateur.component';
 import { RegisterResponsableComponent } from './register-responsable/register-responsable.component';
 import { MenuUtilisateurComponent } from './menu-utilisateur/menu-utilisateur.component';
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
+import { UtilisateursListeComponent } from './utilisateurs-liste/utilisateurs-liste.component';
+import { ResponsablesListeComponent } from './responsables-liste/responsables-liste.component';
+
 
 
 @NgModule({
@@ -17,7 +21,10 @@ import { MenuUtilisateurComponent } from './menu-utilisateur/menu-utilisateur.co
     SignInResComponent,
     RegisterUtilisateurComponent,
     RegisterResponsableComponent,
-    MenuUtilisateurComponent
+    MenuUtilisateurComponent,
+    MenuAdminComponent,
+    UtilisateursListeComponent,
+    ResponsablesListeComponent
   ],
   imports: [
     BrowserModule,
