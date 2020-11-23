@@ -21,7 +21,7 @@ export class ArticlesService {
       12,
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
       10,
-      "../assets/digital.jpg",
+      "../assets/souris.jpg",
       true
     ),
   ]

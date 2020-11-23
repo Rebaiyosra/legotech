@@ -13,6 +13,9 @@ import { UtilisateursListeComponent } from './utilisateurs-liste/utilisateurs-li
 import { ResponsablesListeComponent } from './responsables-liste/responsables-liste.component';
 import { ArticlesListComponent } from './articles-list/articles-list.component';
 import { MenuResponsableArticleComponent } from './menu-responsable-article/menu-responsable-article.component';
+import { AjouterArticleComponent } from './ajouter-article/ajouter-article.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModifierArticleComponent } from './modifier-article/modifier-article.component';
 
 
 
@@ -30,11 +33,15 @@ import { MenuResponsableArticleComponent } from './menu-responsable-article/menu
     ResponsablesListeComponent,
     ArticlesListComponent,
     MenuResponsableArticleComponent,
+    AjouterArticleComponent,
+    ModifierArticleComponent,
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
