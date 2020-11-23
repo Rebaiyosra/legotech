@@ -15,14 +15,14 @@
       <div class="mr-auto"></div>
       <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/liste-article']">Liste articles</a>
+          <a class="nav-link" [routerLink]="['/liste-article']">Liste articles</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/ajouter-article']">Ajouter article</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/liste-article']">Modifier article</a>
-    </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/modifier-article']">Modifier article</a>
+        </li>
         <li class="nav-item dropdown">
           <div class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-user-circle" style="font-size:24px;color: black;"></i>
@@ -31,3 +31,7 @@
             <a  href="#">Profil</a>
             <a  [routerLink]="['/sign-res']">Se déconnecter</a>
           </div>
+        </li>
+      </ul>
+    </div>
+</nav>

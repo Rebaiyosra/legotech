@@ -1,53 +1,53 @@
 export class Article {
-    constructor(private _id: number,private _libelle: string,private _prix: number, 
-        private _desc: string,private _qte: number,private _image: string,private _dispo: boolean){}
-    public get dispo(): boolean {
-        return this._dispo;
-    }
-    public set dispo(value: boolean) {
-        this._dispo = value;
-    }
-    public get image(): string {
-        return this._image;
-    }
-    public set image(value: string) {
-        this._image = value;
-    }
-    public get qte(): number {
-        return this._qte;
-    }
-    public set qte(value: number) {
-        this._qte = value;
-    }
-    public get desc(): string {
-        return this._desc;
-    }
-    public set desc(value: string) {
-        this._desc = value;
-    }
-    public get prix(): number {
-        return this._prix;
-    }
-    public set prix(value: number) {
-        this._prix = value;
-    }
-    public get libelle(): string {
-        return this._libelle;
-    }
-    public set libelle(value: string) {
-        this._libelle = value;
-    }
-   
-   
-
-  
-   
+    constructor(private _id: string,private _nom: string,private _prix: number, 
+        private _desc: string,private _date: Date,private _qt: number,private _image: string,private _dispo: boolean){}
+        public get nom(): string {
+            return this._nom;
+        }
+        public set nom(value: string) {
+            this._nom = value;
+        }
     
-    public get id(): number {
+        public get id(): string {
         return this._id;
-    }
-    public set id(value: number) {
+        }
+        public set id(value: string) {
         this._id = value;
+        }
+        public get image(): string {
+            return this._image;
+        }
+        public set image(value: string) {
+            this._image = value;
+        } 
+        public get prix(): number {
+            return this._prix;
+        }
+        public set prix(value: number) {
+            this._prix = value;
+        }
+        public get dispo(): boolean {
+            return this._dispo;
+        }
+        public set dispo(value: boolean) {
+            this._dispo = value;
+        }
+        public get date(): Date {
+            return this._date;
+        }
+        public set date(value: Date) {
+            this._date = value;
+        }
+        public get desc(): string {
+            return this._desc;
+        }
+        public set desc(value: string) {
+            this._desc = value;
+        }
+        public get qt(): number {
+            return this._qt;
+        }
+        public set qt(value: number) {
+            this._qt = value;
+        }
     }
-    
-}

@@ -11,10 +11,10 @@ export class ArticlesListComponent implements OnInit {
 
   articles !: Article[];
   
-  constructor(private responsableService:ArticlesService) { }
+  constructor(private articlesService:ArticlesService) { }
 
   ngOnInit(): void {
-   this.articles= this.responsableService.onAffiche();
+   this.articles= this.articlesService.onAffiche();
   }
   @Input() id!:number;
   @Input() libelle!:String;

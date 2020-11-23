@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 export class AjouterArticleComponent implements OnInit {
   Articles: Article[] = [];
   nom!: string;
-  id!: number;
+  id!: string;
   image!: string;
   prix!: number;
   dispo:boolean=false;
@@ -26,7 +26,7 @@ export class AjouterArticleComponent implements OnInit {
     this.Articles=this.articlesService.lesArticles;
   }
   onAdd(f:NgForm){
-    this.articlesService.addArticle(this.id,this.nom,this.image,this.prix,this.date,this.qt,this.desc,this.dispo);
+    this.articlesService.addArticle(this.id,this.nom,this.prix,this.desc,this.date,this.qt,this.image,this.dispo);
   }
   onNavigate(){
     this.router.navigate(['liste-article']);

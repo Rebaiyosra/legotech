@@ -7,48 +7,50 @@ export class ArticlesService {
 
   lesArticles= [
     new Article(
-      1,
+      "1e",
       "pc Dell",
       1200,
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      new Date(2019,5,15),
       10,
-      "../assets/dell.jpg",
+      '../../assets/dell.jpg',
       true
     ),
     new Article(
-      2,
+      "2vgf",
       "Souris",
       12,
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      new Date(2020,9,20),
       10,
-      "../assets/souris.jpg",
+      '../../assets/souris.jpg',
       true
     ),
   ]
-  constructor() { }
+
   onAffiche(){
     return this.lesArticles;
   }
-  public getProduitById(id:number){
+  public getProduitById(id:string){
     for (let i=0;i<this.lesArticles.length;i++)
     {
-      if(this.lesArticles[i].id===id)
+      if(this.lesArticles[i].id==id)
       return this.lesArticles[i];
     }
     
-    return null;
+    return null as any;
 
  }
- public addArticle(id: number,libelle: string,image: string,prix: number, date: Date,qt: number,desc: string,dispo:boolean){
+ public addArticle(id: string,nom: string,prix: number,desc: string, date: Date,qt: number,image: string,dispo: boolean){
    if(this.getProduitById(id)==null)
    {
-     let A=new Article(id,libelle,prix,desc,qt,image,dispo)
+     let A=new Article(id,nom,prix,desc,date,qt,image,dispo)
      this.lesArticles.push(A);
      return true;
    }
    return false;
  }
- public supprimer(ref:number){
+ public supprimer(ref:string){
    for (let i=0;i<this.lesArticles.length;i++){
    if(ref==this.lesArticles[i].id)
       this.lesArticles.splice(i,1);
@@ -60,17 +62,20 @@ export class ArticlesService {
   
   
    
-   /*
- public modifier(id: number,libelle: string,image: string,prix: number, date: Date,qt: number,desc: string,dispo:boolean){
+ 
+ public modifier(id: string,nom: string,prix: number,desc: string, date: Date,qt: number,image: string,dispo: boolean){
   let A:Article=this.getProduitById(id);
-  A.libelle=libelle;
+  A.nom=nom;
   A.image=image;
   A.prix=prix;
-  A.qte=qt;
+  A.dispo=dispo;
+  A.date=date;
+  A.qt=qt;
   A.desc=desc;
- A.dispo=dispo;
- if(A.qte===0){
-   A.dispo=false;
+  if(A.qt>0){
+    A.dispo=true;
+  }
  }
- }*/
+
+  constructor() { }
 }

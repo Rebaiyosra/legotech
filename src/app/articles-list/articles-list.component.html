@@ -12,11 +12,11 @@
             <ng-container  *ngFor="let a of articles"> 
             <ul class="list-group" >
                 <li class="list-group-item" >
-                    <div class="pic"><img [src]='image'/> </div>
-                    <h5>{{a.libelle}} </h5>
+                    <h5> <img [src]='image'>
+                        {{a.nom}} </h5>
                     <p>{{a.desc}}</p>
                     <p> <b>prix </b>{{a.prix}}</p>
-                    <p><b>Quantité : </b>{{a.qte}}</p>
+                    <p><b>Quantité : </b>{{a.qt}}</p>
                     
                    
                 <button  class='btn btn-danger' style="float:right">Supprimer</button>
