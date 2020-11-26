@@ -1,79 +1,37 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-        <img src="assets/digital.png" width="50" height="50" class="d-inline-block align-top" alt="">
-    </a>
-    <span class="lego">legotech</span>
-    <form class="form-inline  ">
-      <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
+  <div class="navbar-brand" >
+      <img src="../../assets/digital (2).png" width="50" height="50" class="d-inline-block align-top" alt="">
+  </div>
+  <span class="lego">legotech</span>
+  <form class="form-inline  ">
+    <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
 
-    </form>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  </form>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
   </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div class="mr-auto"></div>
-      <ul class="navbar-nav my-2 my-lg-0">
-    <li class="nav-item">
-        <a class="nav-link" href="#">Utilisateurs</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="mr-auto"></div>
+    <ul class="navbar-nav my-2 my-lg-0">
+      <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/acceuil-utilisateur']">Articles</a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Membres</a>
+      <li>
+        <i class="fa fa-shopping-basket" style="font-size:24px;color: black;"></i>
+        <span>Panier</span>
       </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item dropdown">
+        <div class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-user-circle" style="font-size:24px;color: black;"></i>
-        </a>
-          <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Editer mon profile</a>
-            <a class="dropdown-item" href="#">Se déconnecter</a>
-          </div>
-
-        </li>
-
-      </ul>
-
-      </div>
-  </nav>
-
-  <!------------------------------------------------------------------------------------------------->
-
-<div class="tab-pane fade show active" id="resp" role="tabpanel" aria-labelledby="resp-tab">
-    <h3 class="register-heading lego" style="text-align: center;margin: 30px;">Inscrire un responsable</h3>
-    <div class="row register-form">
-        <div class="col-md-6">
-            <div class="form-group">
-                <input type="text" class="form-control input-sm" placeholder="Nom *" value="" />
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Prénom *" value="" />
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" placeholder="Mot de passe *" value="" />
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control"  placeholder="Confirmer le mot de passe *" value="" />
-            </div>
         </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email *" value="" />
-            </div>
-            <div class="form-group">
-                <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Numéro de téléphone *" value="" />
-            </div>
-            <div class="form-group">
-                <select class="form-control">
-                    <option class="hidden"  selected disabled>Selectionnez le type de responsable</option>
-                    <option>Responsable legotech</option>
-                    <option>Responsable pc occasion</option>
-                </select>
-            </div>
-            <input type="submit" class="btn btn-primary"  value="Enregistrer"/>
+        <div class="dropdown-content" aria-labelledby="navbarDropdown">
+          <a  href="#">Profil</a>
+          <a  [routerLink]="['/sign-utilisateur']">Se déconnecter</a>
         </div>
-    </div>
-</div>
+
+      </li>
+  </ul>
+
+  </div>
+</nav>

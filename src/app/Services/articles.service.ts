@@ -26,6 +26,26 @@ export class ArticlesService {
       '../../assets/souris.jpg',
       true
     ),
+    new Article(
+      "andk",
+      "imprimante",
+      12,
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      new Date(2020,9,20),
+      1000,
+      '../../assets/imprimante.jpg',
+      false
+    ),
+    new Article(
+      "124dhm",
+      "scanner",
+      12,
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      new Date(2020,9,20),
+      250,
+      '../../assets/scanner.jpg',
+      true
+    ),
   ]
 
   onAffiche(){

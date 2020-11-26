@@ -9,6 +9,7 @@ import { ResponsablesListeComponent} from './responsables-liste/responsables-lis
 import { ArticlesListComponent } from './articles-list/articles-list.component';
 import { AjouterArticleComponent } from './ajouter-article/ajouter-article.component';
 import { ModifierArticleComponent } from './modifier-article/modifier-article.component';
+import { AcceuilUtilisateurComponent } from './acceuil-utilisateur/acceuil-utilisateur.component';
 const routes: Routes = [
   {path:'register-utilisateur', component:RegisterUtilisateurComponent},
   {path:'register-responsable', component:RegisterResponsableComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path:'liste-responsable', component:ResponsablesListeComponent},
   {path:'liste-article',component:ArticlesListComponent },
   {path:'ajouter-article',component:AjouterArticleComponent },
-  {path:'modifier-article',component:ModifierArticleComponent }
+  {path:'modifier-article',component:ModifierArticleComponent },
+  {path:'acceuil-utilisateur',component:AcceuilUtilisateurComponent }
   ];
 
 @NgModule({

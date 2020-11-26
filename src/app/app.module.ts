@@ -16,6 +16,7 @@ import { MenuResponsableArticleComponent } from './menu-responsable-article/menu
 import { AjouterArticleComponent } from './ajouter-article/ajouter-article.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModifierArticleComponent } from './modifier-article/modifier-article.component';
+import { AcceuilUtilisateurComponent } from './acceuil-utilisateur/acceuil-utilisateur.component';
 
 
 
@@ -35,6 +36,7 @@ import { ModifierArticleComponent } from './modifier-article/modifier-article.co
     MenuResponsableArticleComponent,
     AjouterArticleComponent,
     ModifierArticleComponent,
+    AcceuilUtilisateurComponent,
     
   ],
   imports: [
