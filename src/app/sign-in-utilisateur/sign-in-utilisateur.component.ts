@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 export class SignInUtilisateurComponent implements OnInit {
 
   constructor(private router: Router) { }
-
+  nom:string="";
+  mdp:string="";
   ngOnInit(): void {
   }
   onRegister(){

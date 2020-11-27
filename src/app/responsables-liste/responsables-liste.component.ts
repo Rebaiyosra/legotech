@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Responsable } from '../Models/Responsable';
-import { ResponsableServiceService } from '../Services/responsable-service.service';
+import { UserService } from '../Services/user.service';
 
 @Component({
   selector: 'app-responsables-liste',
@@ -11,17 +11,18 @@ export class ResponsablesListeComponent implements OnInit {
 
   responsables !: Responsable[];
   
-  constructor(private responsableService:ResponsableServiceService) { }
+  constructor(private responsableService:UserService ) { }
 
   ngOnInit(): void {
-   this.responsables= this.responsableService.onAffiche();
+   this.responsables= this.responsableService.onAfficheRes();
   }
   @Input() id!:number;
   @Input() nom!:String;
   @Input() prenom!:String;
-  @Input() dateNaissance!:Date;
+  @Input() mail!:Date;
   @Input() telephone!:number;
-  @Input() mail!:string;
   @Input() poste!:string;
+
+  @Input() role!:string;
 
 }

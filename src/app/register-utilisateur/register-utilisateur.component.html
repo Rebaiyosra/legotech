@@ -1,8 +1,8 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <!------ Include the above in your HEAD tag ---------->
-
+<app-acceuil-utilisateur></app-acceuil-utilisateur>
 <div class="container-fluid register">
-    <div class="row">
+    <div class="row" >
         <div class="col-md-3 register-left">
             <img style="width: 120px;" src="assets/images/digital.png" alt=""/>
             <div class="lego">legotech</div><br>
@@ -16,24 +16,115 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <h3 class="register-heading">S'inscrire</h3>
-                    <div class="row register-form">
+                    <form class="row register-form" #f="ngForm">
+                        
                         <div class="col-md-6">
+                           
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nom *" value="" />
+                                <input type="text" class="form-control" placeholder="Nom *" name="name" #nom="ngModel"  [(ngModel)]="name" required/>
+                            </div>
+                            <div [hidden]="!nom.errors?.required || nom?.pristine" class="alert alert-danger">
+                                le nom  est un champ obligatoire
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Prénom *" value="" />
+                                    <input type="text" name="prenom" placeholder="prenom *" class="form-control" [(ngModel)]="prenom" required #pre="ngModel">
+                            </div>
+                            <div [hidden]="!pre.errors?.required || pre.pristine" class="alert alert-danger">
+                                La prenom est un champ obligatoire
+                            </div>
+    
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Mot de passe *"  pattern=".{8,}" name="mdp" #pass="ngModel" required [(ngModel)]="mdp" />
+                            </div>
+                            <div [hidden]="!pass.errors?.pattern || pass.pristine" class="alert alert-danger">
+                                Le mot de passe doit contenir au moins 8 caractères
+                            </div>
+                            <div [hidden]="!pass.errors?.required || pass.pristine" class="alert alert-danger">
+                                Le mot de passe  est un champ obligatoire
+                             </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="E-mail *" name="mail" #email="ngModel" required [(ngModel)]="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+                            </div>
+                            <div [hidden]="!email.errors?.pattern|| email.pristine" class="alert alert-danger">
+                                E-mail doit être sous forme "characters@characters.domain"
+                            </div>
+                            <div [hidden]="!email.errors?.required || email.pristine" class="alert alert-danger">
+                                E-mail est un champ obligatoire
+                             </div>
+                            <div class="form-group">
+                                <input type="text" minlength="10" maxlength="10" name="numTel" class="form-control" placeholder="Numéro de téléphone *" pattern="[0-9]{8}" class="form-control" [(ngModel)]="numTel" required #tel="ngModel">
+                            </div>
+                            
+                            <div *ngIf="tel.errors?.pattern && tel.dirty" class="alert alert-danger">
+                                Le numéro de téléphone est composé de 8 chiffres
+                            </div>
+                            <div [hidden]="!tel.errors?.required || tel.pristine" class="alert alert-danger">
+                                Le numéro de téléphone est un champ obligatoire
+                             </div>
+                           
+                            
+                        </div>
+                        <div class="col-md-6">
+                            
+                            <div class="form-group">
+                                <input type="text" minlength="10" maxlength="10" name="adresse" class="form-control" placeholder="adresse *" required #ad="ngModel" [(ngModel)]="adresse" />
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Mot de passe *" value="" />
+                                <select class="form-control">
+                                    <option class="hidden"  selected disabled >État </option>
+                                    <option>Ariana</option>
+                                    <option>Béja</option>
+                                    <option>Ben Arous</option>
+                                    <option>Bizertz</option>
+                                    <option>Gabès</option>
+                                    <option>Gafsa</option>
+                                    <option>Jendouba</option>
+                                    <option>Kébilli</option>
+                                    <option>La Manouba</option>
+                                    <option>La Kef</option>
+                                    <option>Mahdia</option>
+                                    <option>Médnine</option>
+                                    <option>Monastir</option>
+                                    <option>Nabeul</option>
+                                    <option>Sfax</option>
+                                    <option>Sidi Bouzid</option>
+                                    <option>Siliana</option>
+                                    <option>Sousse</option>
+                                    <option>Tataouine</option>
+                                    <option>Tozeur</option>
+                                    <option>Tunis</option>
+                                    <option>Zaghouan</option>
+                                </select>
+                            </div>
+                           
+                            <div class="form-group">
+                                <input type="text" minlength="10" maxlength="10" name="ville" class="form-control" placeholder="ville *" required #vl="ngModel" [(ngModel)]="ville"  />
+                            </div>
+                            <div [hidden]="!vl.errors?.required || vl.pristine" class="alert alert-danger">
+                                Le ville est un champ obligatoire
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control"  placeholder="Confirmer le mot de passe *" value="" />
+                                <input type="text" minlength="10" maxlength="10" name="codeP" class="form-control" placeholder="code Postal *" required #code="ngModel" pattern="[0-9]{4}" [(ngModel)]="codeP"  />
                             </div>
+                            <div [hidden]="!code.errors?.pattern || code.pristine" class="alert alert-danger">
+                               Le code Postal doit contenir 4 chiffres 
+                            </div>
+                            <div [hidden]="!code.errors?.required || code.pristine" class="alert alert-danger">
+                                Le code Postal est un champ obligatoire
+                             </div>
+                            <div class="form-group">
+                                <input type="text" minlength="10" maxlength="10" name="cin" class="form-control" placeholder="Numéro de carte d'identité *" required #numCin="ngModel" pattern="[0-9]{8}" [(ngModel)]="cin"  />
+                            </div>
+                            <div [hidden]="!numCin.errors?.pattern || numCin.pristine" class="alert alert-danger">
+                                Le Numéro de carte d'identité doit contenir 8 chiffres
+                             </div>
+                             <div [hidden]="!numCin.errors?.required || numCin.pristine" class="alert alert-danger">
+                                 Le Numéro de carte d'identité est un champ obligatoire
+                              </div>
                             <div class="form-group">
                                 <div class="maxl">
                                     <label class="radio inline"> 
-                                        <input type="radio" name="gender" value="male" checked>
+                                        <input type="radio" name="gender" value="male" checked >
                                         <span> Mâle </span> 
                                     </label>
                                     <label class="radio inline"> 
@@ -42,28 +133,11 @@
                                     </label>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <input type="submit" class="btnRegister"  value="S'inscrire" [disabled]="f.invalid"/>
+                             </div>    
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email *" value="" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Numéro de téléphone *" value="" />
-                            </div>
-                            <div class="form-group">
-                                <select class="form-control">
-                                    <option class="hidden"  selected disabled>Veuillez sélectionner votre question de séquence</option>
-                                    <option>Quelle est votre date de naissance?</option>
-                                    <option>Quel est votre ancien numéro de téléphone </option>  
-                                    <option>Quel est le nom de ton animal?</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Entrez votre réponse *" value="" />
-                            </div>
-                            <input type="submit" class="btnRegister"  value="S'inscrire"/>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

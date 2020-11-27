@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sign-in-res.component.css']
 })
 export class SignInResComponent implements OnInit {
-
+  nom:string="";
+  mdp:string="";
   constructor() { }
 
   ngOnInit(): void {

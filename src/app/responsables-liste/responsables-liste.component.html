@@ -4,27 +4,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <app-menu-admin></app-menu-admin>
-<button class="btn lego" [routerLink]='["/register-responsable"]'>Ajouter un responsable</button><br>
-<h2>Liste Responsable</h2>
+<h2>Liste Responsables</h2>
 <div class="container">
-
-
-
-
-            <ng-container  *ngFor="let res of responsables"> 
+            <ng-container  *ngFor="let responsable of responsables"> 
             <ul class="list-group" >
                 <li class="list-group-item" >
-                    <div class="pic"><i class="fa fa-user-circle" style="font-size:160px;color: black;"></i></div>
-                    <h5>{{res.nom}} {{res.prenom}}</h5>
-                    <p><b>poste : </b> {{res.poste}}</p>
-                    <p> <b>Date de dateNaissance : </b>{{res.dateNaissance | date}}</p>
-                    <p><b>Numéro téléphone : </b>{{res.telephone}}</p>
-                    <p><b>E-mail : </b>{{res.mail}}</p>
+                    <div class="pic"><i class="fa fa-user-circle" style="font-size:170px;color: black;"></i></div>
+                    <h5>{{responsable.nom}} {{responsable.prenom}}</h5>
+                    <p><b>Numéro téléphone : </b>{{responsable.telephone}}</p>
+                    <p><b>E-mail : </b>{{responsable.mail}}</p>
+
+                    <p><b>Poste : </b>{{responsable.poste}}</p>
                    
                 <button  class='btn btn-danger' style="float:right">Supprimer</button>
             </li>
             </ul>
             </ng-container>
-   
+           
         </div>
         

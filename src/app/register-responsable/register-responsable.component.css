@@ -11,10 +11,26 @@
     margin-right: 10%;
     margin-left: 10%;
 }
-.form-control{
+.form-control {
+    border-radius: 25px;
+    width: 75%;
+}
+.alert-danger{
     border-radius: 25px;
     width: 75%;
 }
 .btn-primary{
     float: right;
+}
+.btnRegister{
+    float: right;
+    margin-top: 10%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: #0062cc;
+    color: #fff;
+    font-weight: 600;
+    width: 150px;
+    cursor: pointer;
 }

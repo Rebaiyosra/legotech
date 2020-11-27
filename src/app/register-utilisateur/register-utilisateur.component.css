@@ -3,6 +3,14 @@
    
     padding: 3%;
 }
+.form-control {
+    border-radius: 25px;
+    width: 90%;
+}
+.alert-danger{
+    border-radius: 25px;
+    width: 90%;
+}
 .lego{
     font-size: 25px;
     text-transform: uppercase;

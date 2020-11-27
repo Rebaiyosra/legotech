@@ -9,6 +9,10 @@
   margin-left: -55.5%;
     top: 5%;
 }
+.alert-danger{
+  border-radius: 25px;
+  
+}
 .login-logo img{
   position: absolute;
   width: 25%;

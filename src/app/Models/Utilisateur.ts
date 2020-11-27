@@ -1,4 +1,49 @@
 export class Utilisateur {
+   
+    public get mdp(): string {
+        return this._mdp;
+    }
+    public set mdp(value: string) {
+        this._mdp = value;
+    }
+    public get role(): string {
+        return this._role;
+    }
+    public set role(value: string) {
+        this._role = value;
+    }
+  
+    public get sexe(): string {
+        return this._sexe;
+    }
+    public set sexe(value: string) {
+        this._sexe = value;
+    }
+    public get numCin(): number {
+        return this._numCin;
+    }
+    public set numCin(value: number) {
+        this._numCin = value;
+    }
+    public get codePostal(): number {
+        return this._codePostal;
+    }
+    public set codePostal(value: number) {
+        this._codePostal = value;
+    }
+   
+    public get ville(): string {
+        return this._ville;
+    }
+    public set ville(value: string) {
+        this._ville = value;
+    }
+    public get gouver(): string {
+        return this._gouver;
+    }
+    public set gouver(value: string) {
+        this._gouver = value;
+    }
     public get adresse(): string {
         return this._adresse;
     }
@@ -6,7 +51,9 @@ export class Utilisateur {
         this._adresse = value;
     }
     constructor(private _id: number,private _nom: string,private _prenom: string, 
-        private _dateNaissance: Date,private _telephone: number,private _mail: string,private _adresse: string){}
+        private _telephone: number,private _mail: string,private _adresse: string,private _gouver: string,private _ville: string,
+        private _codePostal: number,private _numCin: number,private _sexe: string,
+        private _role: string,private _mdp: string){}
 
     public get mail(): string {
         return this._mail;
@@ -21,12 +68,7 @@ export class Utilisateur {
     public set telephone(value: number) {
         this._telephone = value;
     }
-    public get dateNaissance(): Date {
-        return this._dateNaissance;
-    }
-    public set dateNaissance(value: Date) {
-        this._dateNaissance = value;
-    }
+  
     public get prenom(): string {
         return this._prenom;
     }

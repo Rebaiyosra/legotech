@@ -13,17 +13,25 @@
                 </div>
                 <div class="col-md-6 login-form-1"> 
                     <h3>Connexion</h3>
-                    <form>
+                    <form #f="ngForm">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Nom d'utilisateur" value="" required/>
+                            <input type="text" class="form-control" placeholder="Nom d'utilisateur" name="nom" [(ngModel)]="nom" required #name="ngModel"/>
+                            
+                        </div>
+                        <div [hidden]="!name.errors?.required || name.pristine" class="alert alert-danger">
+                            le nom d'utilisateur est un champ obligatoire
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Mot de passe" value="" required/>
+                            <input type="password" class="form-control" placeholder="Mot de passe" name="mdp" [(ngModel)]="mdp" required #mot="ngModel"/>
+                            
+                        </div>
+                        <div [hidden]="!mot.errors?.required || mot.pristine" class="alert alert-danger">
+                            le mot de passe est un champ obligatoire
                         </div>
                         <div class="btnContainer form-group ">
                             <input type="submit" class="btnSubmit" value="Connexion" />
                         </div>
-                        <div class="ForgetPwd form-group ">
+                        <div class="ForgetPwd form-group">
                             <a href="#" >Mot de passe oublié ?</a>
                         </div>
                     </form>
