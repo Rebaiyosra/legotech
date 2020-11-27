@@ -17,7 +17,7 @@ export class AccessoiresComponent implements OnInit {
    this.articles= this.articlesService.onAffiche();
   }
   @Input() id!:number;
-  @Input() libelle!:String;
+  @Input() nom!:String;
   @Input() image!:String;
   @Input() categorie!: String;
   @Input() prix!:number;

@@ -20,6 +20,7 @@ import { AcceuilUtilisateurComponent } from './acceuil-utilisateur/acceuil-utili
 import { OrdinateursComponent } from './categories/ordinateurs/ordinateurs/ordinateurs.component';
 import { AccessoiresComponent } from './categories/accessoires/accessoires/accessoires.component';
 import { ImprimantesComponent } from './categories/imprimantes/imprimantes/imprimantes.component';
+import { ErreurComponent } from './erreur/erreur.component';
 
 
 
@@ -42,6 +43,7 @@ import { ImprimantesComponent } from './categories/imprimantes/imprimantes/impri
     OrdinateursComponent,
     AccessoiresComponent,
     ImprimantesComponent,
+    ErreurComponent,
     
   ],
   imports: [

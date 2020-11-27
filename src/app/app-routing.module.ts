@@ -10,6 +10,10 @@ import { ArticlesListComponent } from './articles-list/articles-list.component';
 import { AjouterArticleComponent } from './ajouter-article/ajouter-article.component';
 import { ModifierArticleComponent } from './modifier-article/modifier-article.component';
 import { AcceuilUtilisateurComponent } from './acceuil-utilisateur/acceuil-utilisateur.component';
+import { OrdinateursComponent } from './categories/ordinateurs/ordinateurs/ordinateurs.component';
+import { ImprimantesComponent } from './categories/imprimantes/imprimantes/imprimantes.component';
+import { AccessoiresComponent } from './categories/accessoires/accessoires/accessoires.component';
+import { ErreurComponent } from './erreur/erreur.component';
 const routes: Routes = [
   {path:'register-utilisateur', component:RegisterUtilisateurComponent},
   {path:'register-responsable', component:RegisterResponsableComponent},
@@ -20,7 +24,12 @@ const routes: Routes = [
   {path:'liste-article',component:ArticlesListComponent },
   {path:'ajouter-article',component:AjouterArticleComponent },
   {path:'modifier-article',component:ModifierArticleComponent },
-  {path:'acceuil-utilisateur',component:AcceuilUtilisateurComponent }
+  {path:'acceuil-utilisateur',component:AcceuilUtilisateurComponent },
+  {path:'ordinateurs',component:OrdinateursComponent },
+  {path:'imprimantes',component:ImprimantesComponent },
+  {path:'accessoires',component:AccessoiresComponent },
+  {path:'', redirectTo:'acceuil-utilisateur', pathMatch:'full'},
+  {path:'**',component:ErreurComponent}
   ];
 
 @NgModule({

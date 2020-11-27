@@ -43,7 +43,7 @@ export class ArticlesService {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
       "accessoires",
       250,
-      '../../assets/casque-micro.jpg',
+      '../../assets/micro-casque.jpg',
       true
     ),
   ]
