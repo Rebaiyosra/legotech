@@ -16,7 +16,7 @@ export class AjouterArticleComponent implements OnInit {
   image!: string;
   prix!: number;
   dispo:boolean=false;
-  date!: Date;
+  categorie!: string;
   desc!: string;
   qt!: number;
 
@@ -26,7 +26,7 @@ export class AjouterArticleComponent implements OnInit {
     this.Articles=this.articlesService.lesArticles;
   }
   onAdd(f:NgForm){
-    this.articlesService.addArticle(this.id,this.nom,this.prix,this.desc,this.date,this.qt,this.image,this.dispo);
+    this.articlesService.addArticle(this.id,this.nom,this.prix,this.desc,this.categorie,this.qt,this.image,this.dispo);
   }
   onNavigate(){
     this.router.navigate(['liste-article']);

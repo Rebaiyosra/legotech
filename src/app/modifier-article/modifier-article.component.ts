@@ -22,7 +22,7 @@ export class ModifierArticleComponent implements OnInit {
     this.modifForm.get('image')?.setValue(A.image);
     this.modifForm.get('prix')?.setValue(A.prix);
     this.modifForm.get('dispo')?.setValue(A.dispo);
-    this.modifForm.get('date')?.setValue(A.date);
+    this.modifForm.get('categorie')?.setValue(A.categorie);
     this.modifForm.get('qt')?.setValue(A.qt);
     this.modifForm.get('desc')?.setValue(A.desc);
   }
@@ -57,7 +57,7 @@ export class ModifierArticleComponent implements OnInit {
         nom:['',Validators.required],
         image:['',Validators.required],
         prix:['',Validators.required],
-        date:['',Validators.required],
+        categorie:['',Validators.required],
         dispo:[],
         desc:['',Validators.required],
         qt:['',Validators.required]
@@ -75,7 +75,7 @@ export class ModifierArticleComponent implements OnInit {
   public get prix()
   { return this.modifForm.get('prix'); }
   public get date()
-  { return this.modifForm.get('date'); }
+  { return this.modifForm.get('categorie'); }
   public get dispo()
   { return this.modifForm.get('dispo'); }
   public get desc()

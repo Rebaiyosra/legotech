@@ -17,7 +17,9 @@ import { AjouterArticleComponent } from './ajouter-article/ajouter-article.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModifierArticleComponent } from './modifier-article/modifier-article.component';
 import { AcceuilUtilisateurComponent } from './acceuil-utilisateur/acceuil-utilisateur.component';
-
+import { OrdinateursComponent } from './categories/ordinateurs/ordinateurs/ordinateurs.component';
+import { AccessoiresComponent } from './categories/accessoires/accessoires/accessoires.component';
+import { ImprimantesComponent } from './categories/imprimantes/imprimantes/imprimantes.component';
 
 
 
@@ -37,6 +39,9 @@ import { AcceuilUtilisateurComponent } from './acceuil-utilisateur/acceuil-utili
     AjouterArticleComponent,
     ModifierArticleComponent,
     AcceuilUtilisateurComponent,
+    OrdinateursComponent,
+    AccessoiresComponent,
+    ImprimantesComponent,
     
   ],
   imports: [

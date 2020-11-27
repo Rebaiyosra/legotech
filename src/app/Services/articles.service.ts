@@ -11,7 +11,7 @@ export class ArticlesService {
       "pc Dell",
       1200,
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
-      new Date(2019,5,15),
+      "ordinateurs",
       10,
       '../../assets/dell.jpg',
       true
@@ -21,7 +21,7 @@ export class ArticlesService {
       "Souris",
       12,
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
-      new Date(2020,9,20),
+      "accessoires",
       10,
       '../../assets/souris.jpg',
       true
@@ -31,19 +31,19 @@ export class ArticlesService {
       "imprimante",
       12,
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
-      new Date(2020,9,20),
+      "imprimantes",
       1000,
       '../../assets/imprimante.jpg',
       false
     ),
     new Article(
       "124dhm",
-      "scanner",
+      "casque micro",
       12,
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
-      new Date(2020,9,20),
+      "accessoires",
       250,
-      '../../assets/scanner.jpg',
+      '../../assets/casque-micro.jpg',
       true
     ),
   ]
@@ -61,10 +61,10 @@ export class ArticlesService {
     return null as any;
 
  }
- public addArticle(id: string,nom: string,prix: number,desc: string, date: Date,qt: number,image: string,dispo: boolean){
+ public addArticle(id: string,nom: string,prix: number,desc: string, categorie: string,qt: number,image: string,dispo: boolean){
    if(this.getProduitById(id)==null)
    {
-     let A=new Article(id,nom,prix,desc,date,qt,image,dispo)
+     let A=new Article(id,nom,prix,desc,categorie,qt,image,dispo)
      this.lesArticles.push(A);
      return true;
    }
@@ -83,13 +83,13 @@ export class ArticlesService {
   
    
  
- public modifier(id: string,nom: string,prix: number,desc: string, date: Date,qt: number,image: string,dispo: boolean){
+ public modifier(id: string,nom: string,prix: number,desc: string, categorie: string,qt: number,image: string,dispo: boolean){
   let A:Article=this.getProduitById(id);
   A.nom=nom;
   A.image=image;
   A.prix=prix;
   A.dispo=dispo;
-  A.date=date;
+  A.categorie=categorie;
   A.qt=qt;
   A.desc=desc;
   if(A.qt>0){

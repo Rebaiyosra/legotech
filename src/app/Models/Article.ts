@@ -1,6 +1,6 @@
 export class Article {
     constructor(private _id: string,private _nom: string,private _prix: number, 
-        private _desc: string,private _date: Date,private _qt: number,private _image: string,private _dispo: boolean){}
+        private _desc: string,private _categorie: string,private _qt: number,private _image: string,private _dispo: boolean){}
         public get nom(): string {
             return this._nom;
         }
@@ -32,11 +32,11 @@ export class Article {
         public set dispo(value: boolean) {
             this._dispo = value;
         }
-        public get date(): Date {
-            return this._date;
+        public get categorie(): string {
+            return this._categorie;
         }
-        public set date(value: Date) {
-            this._date = value;
+        public set categorie(value: string) {
+            this._categorie = value;
         }
         public get desc(): string {
             return this._desc;

@@ -5,23 +5,17 @@
 <app-menu-responsable-article></app-menu-responsable-article>
 <h2>Liste Articles</h2>
 <div class="container">
-
-
-
-
     <ng-container  *ngFor="let a of articles"> 
-    <ul class="list-group" >
-        <li class="list-group-item" >
+    <ul class="list-group flex-container">
+        <li class="list-group-item ">
             <h5> <img [src]='image'>
                 {{a.nom}} </h5>
             <p>{{a.desc}}</p>
             <p> <b>prix </b>{{a.prix}}</p>
-            <p><b>Quantité : </b>{{a.qt}}</p>
             
             
-        <button  class='btn btn-danger' style="float:right">Supprimer</button>
+        <button  class='btn btn-info' style="float:right">Acheter</button>
     </li>
     </ul>
     </ng-container>
-
 </div>

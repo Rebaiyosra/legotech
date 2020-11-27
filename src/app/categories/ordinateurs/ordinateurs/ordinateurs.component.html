@@ -1,0 +1,13 @@
+<ng-container  *ngFor="let a of articles"> 
+    <div *ngIf="a.categorie==='ordinateurs'">
+    <ul class="list-group">
+        <li class="list-group-item" >
+            <h5> <img [src]='image'>
+                {{a.nom}} </h5>
+            <p>{{a.desc}}</p>
+            <p> <b>prix </b>{{a.prix}}</p>
+            <button  class='btn btn-info' style="float:right">Ajouter</button>
+        </li>
+    </ul>
+    </div>
+</ng-container>
