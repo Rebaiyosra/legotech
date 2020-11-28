@@ -37,7 +37,7 @@ export class ModifierArticleComponent implements OnInit {
     this.modifForm.get('image')?.value,
     this.modifForm.get('prix')?.value,
     this.modifForm.get('dispo')?.value,
-    this.modifForm.get('date')?.value,
+    this.modifForm.get('categorie')?.value,
     this.modifForm.get('qt')?.value,
     this.modifForm.get('desc')?.value
     )

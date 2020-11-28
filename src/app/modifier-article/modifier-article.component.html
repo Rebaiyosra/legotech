@@ -17,7 +17,7 @@
         
     <div class="form-group">
         <label for="ref">Reference </label>
-        <select id="emp" class="form-control"  formControlName="id"  > <!--(Change)="onChange($event.target.value)"-->
+        <select id="emp" class="form-control"  formControlName="id"  (Change)="onChange($any($event.target).value)">
                 <ng-container  *ngFor='let t of Articles'> 
                 <option [value]="t.id" >{{t.id}}</option>
                 </ng-container>
@@ -33,22 +33,28 @@
         <input type="text" id="n" placeholder="Enter un nom d'article"
          name="nom"  class="form-control" formControlName="nom" >
     </div> 
-  
+    <div *ngIf="nom?.invalid && nom?.dirty" class="alert alert-danger">
+        nom est invalide
+        </div>
     
     
     <div class="form-group">
     <label for="img">Image </label>
-    <input type="text" id="img" name="image" placeholder="image d'article" class="form-control"
+    <input type="file" id="img" name="image" placeholder="image d'article" class="form-control"
          formControlName="image"> 
                
     </div>     
-    
+    <div *ngIf="image?.invalid && image?.dirty" class="alert alert-danger">
+        Image est invalide
+        </div>
     <div class="form-group">
         <label for="pr">Prix </label>
         <input type="number" id="pr" name="prix" placeholder="Entrer un prix" class="form-control"
          formControlName="prix"> 
     </div>
-   
+    <div *ngIf="prix?.invalid && prix?.dirty" class="alert alert-danger">
+        Prix est invalide
+        </div>
     
     
     
@@ -56,25 +62,31 @@
         <label for="d">Catégorie </label>
         <input type="text" id="d" name="categorie"  placeholder="" class="form-control" formControlName="categorie" >
      </div>
-
+     
     <div class="form-group">
         <label for="di">Disponibilité </label>
         <input type="text" id="di" name="dispo" placeholder="Ecriver true ou false" 
          class="form-control" formControlName="dispo" >
     </div>
-
+    <div *ngIf="dispo?.invalid && dispo?.dirty" class="alert alert-danger">
+        Disponibilité est invalide
+        </div>
     <div class="form-group">
         <label for="de">Description </label>
         <input type="text" id="de" name="desc" placeholder="Ecriver une description" 
         class="form-control" formControlName="desc">
     </div>
-   
+    <div *ngIf="desc?.invalid && desc?.dirty" class="alert alert-danger">
+        Description est invalide
+        </div>
     <div class="form-group">
         <label for="q">Quantité </label>
         <input type="number" id="q" name="qt" placeholder="Entrer une quantité"
          class="form-control" formControlName="qt">
     </div>
-   
+    <div *ngIf="qt?.invalid && qt?.dirty" class="alert alert-danger">
+        Quantité est invalide
+        </div>
     <div class="form-group">
     <button type ="submit" class='btn btn-info float-right color-modifier' [disabled]="modifForm.invalid" >Modifier</button> 
     </div>
