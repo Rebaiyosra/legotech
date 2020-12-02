@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { Responsable } from '../Models/Responsable';
-import { UserService } from '../Services/user.service';
+import { ResponsableService } from '../Services/responsable.service';
+
 
 @Component({
   selector: 'app-responsables-liste',
@@ -9,20 +9,43 @@ import { UserService } from '../Services/user.service';
 })
 export class ResponsablesListeComponent implements OnInit {
 
-  responsables !: Responsable[];
+  responsables?:any;
   
-  constructor(private responsableService:UserService ) { }
+  constructor(private service:ResponsableService ) { }
 
   ngOnInit(): void {
-   this.responsables= this.responsableService.onAfficheRes();
-  }
-  @Input() id!:number;
-  @Input() nom!:String;
-  @Input() prenom!:String;
-  @Input() mail!:Date;
-  @Input() telephone!:number;
-  @Input() poste!:string;
+  //  this.responsables= this.service.getAll();
+  console.log(this.service.getAll());
+  this.onCharger();
 
-  @Input() role!:string;
+  }
+
+  onCharger(){
+    this.service.getAll()
+      .subscribe(
+        data=>{this.responsables=data},
+        error=>{console.log(error)}
+      );
+    // this.service.getAll()
+    //   .subscribe(
+    //     data=>{for (let i of  data){
+    //       if (i.role!="adminstrateur")
+    //         this.responsables.push(i);
+    //     }
+    //     },
+    //     error=>{console.log(error)}
+    //   );
+  }
+  onSuprimmer(id:number,i:number){
+  
+    this.service.delete(id)
+      .subscribe(
+        response=>{console.log(response);this.onCharger()},
+          // this.responsables.splice(this.responsables.length-(1+i),i);},
+        error=>{console.log(error)}
+      );
+     
+  }
+  
 
 }

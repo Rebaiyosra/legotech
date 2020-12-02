@@ -6,17 +6,17 @@
 <app-menu-admin></app-menu-admin>
 <h2>Liste Responsables</h2>
 <div class="container">
-            <ng-container  *ngFor="let responsable of responsables"> 
-            <ul class="list-group" >
-                <li class="list-group-item" >
+            <ng-container  *ngFor="let responsable of responsables  let i=index"> 
+            <ul class="list-group"*ngIf="responsable.role!='adminstrateur'" >
+                <li class="list-group-item"  >
                     <div class="pic"><i class="fa fa-user-circle" style="font-size:170px;color: black;"></i></div>
                     <h5>{{responsable.nom}} {{responsable.prenom}}</h5>
                     <p><b>Numéro téléphone : </b>{{responsable.telephone}}</p>
-                    <p><b>E-mail : </b>{{responsable.mail}}</p>
+                    <p><b>E-mail : </b>{{responsable.email}}</p>
 
-                    <p><b>Poste : </b>{{responsable.poste}}</p>
+                    <p><b>Poste : </b>{{responsable.role}}</p>
                    
-                <button  class='btn btn-danger' style="float:right">Supprimer</button>
+                <button  class='btn btn-danger' (click)="onSuprimmer(responsable.id,i)" style="float:right">Supprimer</button>
             </li>
             </ul>
             </ng-container>

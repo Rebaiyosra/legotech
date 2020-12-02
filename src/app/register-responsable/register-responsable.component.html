@@ -2,11 +2,11 @@
 <!------ Include the above in your HEAD tag ---------->
 
 
-  <!------------------------------------------------------------------------------------------------->
+
 <app-menu-admin></app-menu-admin>
 <div class="tab-pane fade show active" id="resp" role="tabpanel" aria-labelledby="resp-tab">
     <h3 class="register-heading lego" style="text-align: center;margin: 30px;">Ajouter un responsable</h3>
-    <form class="row register-form" #f="ngForm">
+    <form class="row register-form" (ngSubmit)="onSaveResponsable(f)" #f="ngForm">
                         
         <div class="col-md-6">
            
@@ -26,7 +26,10 @@
             <div class="form-group">
                 <input type="password" class="form-control" placeholder="Mot de passe *"  pattern=".{8,}" name="mdp" #pass="ngModel" required [(ngModel)]="mdp" />
             </div>
-            <div [hidden]="!pass.errors?.pattern || pass.pristine" class="alert alert-danger">
+            <div [hidden]="!pass.errors?.pattern || pass.touched" class="alert alert-warning">
+                Tapez un mot de passe au moins 8 caractères
+            </div>
+            <div *ngIf="pass.errors?.pattern && pass.touched" class="alert alert-danger">
                 Le mot de passe doit contenir au moins 8 caractères
             </div>
             <div [hidden]="!pass.errors?.required || pass.pristine" class="alert alert-danger">
@@ -41,34 +44,38 @@
             <div class="form-group">
                 <input type="email" class="form-control" placeholder="E-mail *" name="mail" #email="ngModel" required [(ngModel)]="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
             </div>
-            <div [hidden]="!email.errors?.pattern|| email.pristine" class="alert alert-danger">
+            <div *ngIf="email.errors?.pattern && email.touched" class="alert alert-danger">
                 E-mail doit être sous forme "characters@characters.domain"
             </div>
+            
             <div [hidden]="!email.errors?.required || email.pristine" class="alert alert-danger">
                 E-mail est un champ obligatoire
              </div>
+             
             <div class="form-group">
-                <input type="text" minlength="10" maxlength="10" name="numTel" class="form-control" placeholder="Numéro de téléphone *" pattern="[0-9]{8}" class="form-control" [(ngModel)]="numTel" required #tel="ngModel">
+                <input type="text"  name="numTel" class="form-control" placeholder="Numéro de téléphone *" pattern="[0-9]{8}" class="form-control" [(ngModel)]="numTel" required #tel="ngModel">
             </div>
             
-            <div *ngIf="tel.errors?.pattern && tel.dirty" class="alert alert-danger">
+            <div *ngIf="tel.errors?.pattern && tel.touched" class="alert alert-danger">
                 Le numéro de téléphone est composé de 8 chiffres
             </div>
             <div [hidden]="!tel.errors?.required || tel.pristine" class="alert alert-danger">
                 Le numéro de téléphone est un champ obligatoire
              </div>
+
             <div class="form-group">
-                <select class="form-control">
+                <select class="form-control" [(ngModel)]="poste" [ngModelOptions]="{standalone: true}">
                     <option class="hidden"  selected disabled >poste </option>
-                    <option>responsable article</option>
-                    <option>responsable service aprés vente</option>
+                    <option value="responsable article">responsable article</option>
+                    <option value="responsable service aprés vente">responsable service aprés vente</option>
                 </select>
             </div>        
-            
             <div class="form-group">
-                <input type="submit" class="btnRegister"  value="S'inscrire" [disabled]="f.invalid"/>
-             </div>    
+                <input type="submit" class="btnRegister"  value="S'inscrire" [disabled]="f.invalid" />
+             </div>   
+              
         </div>
+        <div class="alert alert-danger " *ngIf="message"> {{message}} </div>
     </form>
 </div>
 

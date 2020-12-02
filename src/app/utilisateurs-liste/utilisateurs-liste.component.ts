@@ -1,30 +1,34 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Utilisateur } from '../Models/Utilisateur';
 import {UserService} from '../Services/user.service'
+import { UtilisateursServiceService } from '../Services/utilisateurs.service';
 @Component({
   selector: 'app-utilisateurs-liste',
   templateUrl: './utilisateurs-liste.component.html',
   styleUrls: ['./utilisateurs-liste.component.css']
 })
 export class UtilisateursListeComponent implements OnInit {
-  utilisateurs !: Utilisateur[];
+  utilisateurs: any;
   
-  constructor(private utilisateurService:UserService) { }
-
+  constructor(private service:UtilisateursServiceService) { }
   ngOnInit(): void {
-   this.utilisateurs= this.utilisateurService.onAfficheUtili();
-  }
-  @Input() id!:number;
-  @Input() nom!:String;
-  @Input() prenom!:String;
-  @Input() mail!:Date;
-  @Input() telephone!:number;
-  @Input() gouver!:string;
-  @Input() adresse!:string;
-  @Input() ville!:string;
-  @Input() photo !:string;
-  @Input() codePostal!:number;
-  @Input() numCin!:number;
-  @Input() sexe!:string;
-  @Input() role!:string;
+      this.onCharger();
+     }
+
+      onCharger(){
+      this.service.getAll()
+        .subscribe(
+          data=>{this.utilisateurs=data},
+          error=>{console.log(error)}
+        );
+      }
+
+        onSuprimmer(id:number,i:number){
+          this.service.delete(id)
+            .subscribe(
+              response=>{console.log(response);this.onCharger()},
+              // this.responsables.splice(this.responsables.length-(1+i),i);},
+              error=>{console.log(error)}
+            );   
+}
 }

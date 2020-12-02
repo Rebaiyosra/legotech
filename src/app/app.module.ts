@@ -21,6 +21,7 @@ import { OrdinateursComponent } from './categories/ordinateurs/ordinateurs/ordin
 import { AccessoiresComponent } from './categories/accessoires/accessoires/accessoires.component';
 import { ImprimantesComponent } from './categories/imprimantes/imprimantes/imprimantes.component';
 import { ErreurComponent } from './erreur/erreur.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -50,7 +51,8 @@ import { ErreurComponent } from './erreur/erreur.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

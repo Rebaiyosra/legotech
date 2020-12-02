@@ -5,17 +5,17 @@
 <app-menu-admin></app-menu-admin>
 <h2>Liste utilisateurs</h2>
 <div class="container">
-            <ng-container  *ngFor="let utilisateur of utilisateurs"> 
+            <ng-container  *ngFor="let utilisateur of utilisateurs  let i=index"> 
             <ul class="list-group" >
                 <li class="list-group-item" >
                     <div class="pic"><i class="fa fa-user-circle" style="font-size:170px;color: black;"></i></div>
                     <h5>{{utilisateur.nom}} {{utilisateur.prenom}}</h5>
                     <p><b>Numéro téléphone : </b>{{utilisateur.telephone}}</p>
-                    <p><b>E-mail : </b>{{utilisateur.mail}}</p>
-                    <p><b>Adresse : </b> {{utilisateur.adresse}}, {{utilisateur.gouver}}, {{utilisateur.ville}}, {{utilisateur.codePostal}}</p>
-                    <p><b>Cin : </b>{{utilisateur.numCin}}</p>
+                    <p><b>E-mail : </b>{{utilisateur.email}}</p>
+                    <p><b>Adresse : </b> {{utilisateur.adresse}}, {{utilisateur.gouvernorat}}, {{utilisateur.ville}}, {{utilisateur.code_postal}}</p>
+                    <p><b>Cin : </b>{{utilisateur.num_cin}}</p>
                     <p><b>Sexe : </b>{{utilisateur.sexe}}</p>      
-                <button  class='btn btn-danger' style="float:right">Supprimer</button>
+                <button  class='btn btn-danger'(click)="onSuprimmer(utilisateur.id,i)" style="float:right">Supprimer</button>
             </li>
             </ul>
             </ng-container>

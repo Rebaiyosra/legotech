@@ -7,9 +7,11 @@
     border-radius: 25px;
     width: 90%;
 }
-.alert-danger{
+.alert-warning,.alert-danger{
     border-radius: 25px;
     width: 90%;
+    font-size: 12px;
+    text-align: center;
 }
 .lego{
     font-size: 25px;
