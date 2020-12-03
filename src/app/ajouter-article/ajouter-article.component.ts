@@ -24,10 +24,10 @@ export class AjouterArticleComponent implements OnInit {
 
   ngOnInit() {
     this.Articles=this.articlesService.lesArticles;
-  }
+  }/*
   onAdd(f:NgForm){
     this.articlesService.addArticle(this.id,this.nom,this.prix,this.desc,this.categorie,this.qt,this.image,this.dispo);
-  }
+  }*/
   onNavigate(){
     this.router.navigate(['liste-article']);
   }

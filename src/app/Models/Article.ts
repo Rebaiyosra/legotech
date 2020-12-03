@@ -1,6 +1,30 @@
-export class Article {
-    constructor(private _id: string,private _nom: string,private _prix: number, 
-        private _desc: string,private _categorie: string,private _qt: number,private _image: string,private _dispo: boolean){}
+export abstract class  Article {
+    public get id(): string {
+        return this._id;
+    }
+    public set id(value: string) {
+        this._id = value;
+    }
+    public get type(): string {
+        return this._type;
+    }
+    public set type(value: string) {
+        this._type = value;
+    }
+    public get marque(): string {
+        return this._marque;
+    }
+    public set marque(value: string) {
+        this._marque = value;
+    }
+    public get qte(): number {
+        return this._qte;
+    }
+    public set qte(value: number) {
+        this._qte = value;
+    }
+    constructor(public _id: string,public _nom: string,public _prix: number, public _image: string,
+        public _desc: string,public _qte: number,public _marque: string,public _type: string){}
         public get nom(): string {
             return this._nom;
         }
@@ -8,12 +32,7 @@ export class Article {
             this._nom = value;
         }
     
-        public get id(): string {
-        return this._id;
-        }
-        public set id(value: string) {
-        this._id = value;
-        }
+        
         public get image(): string {
             return this._image;
         }
@@ -26,28 +45,12 @@ export class Article {
         public set prix(value: number) {
             this._prix = value;
         }
-        public get dispo(): boolean {
-            return this._dispo;
-        }
-        public set dispo(value: boolean) {
-            this._dispo = value;
-        }
-        public get categorie(): string {
-            return this._categorie;
-        }
-        public set categorie(value: string) {
-            this._categorie = value;
-        }
+       
         public get desc(): string {
             return this._desc;
         }
         public set desc(value: string) {
             this._desc = value;
         }
-        public get qt(): number {
-            return this._qt;
-        }
-        public set qt(value: number) {
-            this._qt = value;
-        }
+      
     }

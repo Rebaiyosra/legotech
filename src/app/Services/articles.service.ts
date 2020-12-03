@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AccesoireInfo } from '../Models/AccessoireInfo';
 import {Article} from '../Models/Article';
 @Injectable({
   providedIn: 'root'
@@ -6,46 +7,19 @@ import {Article} from '../Models/Article';
 export class ArticlesService {
 
   lesArticles= [
-    new Article(
-      "1e",
-      "pc Dell",
-      1200,
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
-      "ordinateurs",
-      10,
-      '../../assets/dell.jpg',
-      true
-    ),
-    new Article(
-      "2vgf",
-      "Souris",
-      12,
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
-      "accessoires",
-      10,
+  
+    new AccesoireInfo(
+      "a11",
+      "souris",
+      6.500,
       '../../assets/souris.jpg',
-      true
-    ),
-    new Article(
-      "andk",
-      "imprimante",
-      12,
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
-      "imprimantes",
-      1000,
-      '../../assets/imprimante.jpg',
-      false
-    ),
-    new Article(
-      "124dhm",
-      "casque micro",
-      12,
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      10,
+      "Macro",
       "accessoires",
-      250,
-      '../../assets/micro-casque.jpg',
-      true
+      "souris"
     ),
+   
   ]
 
   onAffiche(){
@@ -54,14 +28,14 @@ export class ArticlesService {
   public getProduitById(id:string){
     for (let i=0;i<this.lesArticles.length;i++)
     {
-      if(this.lesArticles[i].id==id)
+      if(this.lesArticles[i]._id==id)
       return this.lesArticles[i];
     }
     
     return null as any;
 
- }
- public addArticle(id: string,nom: string,prix: number,desc: string, categorie: string,qt: number,image: string,dispo: boolean){
+ }/*
+ public addArticle(id: number,nom: string,prix: number,desc: string, categorie: string,qt: number,image: string,dispo: boolean){
    if(this.getProduitById(id)==null)
    {
      let A=new Article(id,nom,prix,desc,categorie,qt,image,dispo)
@@ -97,5 +71,5 @@ export class ArticlesService {
   }
  }
 
-  constructor() { }
+  constructor() { }*/
 }

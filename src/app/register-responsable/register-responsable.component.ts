@@ -23,7 +23,7 @@ export class RegisterResponsableComponent implements OnInit {
   onSaveResponsable(form:NgForm){
     this.message="";
     if (this.poste=="poste"){
-       this.message="ERROR : Choisissez le poste de responsable";
+       this.message="ERROR : Choisissez votre Etat";
     }else
     {
     const object={
@@ -37,7 +37,7 @@ export class RegisterResponsableComponent implements OnInit {
     this.service.create(object)
       .subscribe(
         response =>{ console.log(response);this.rt.navigate(['/liste-responsable'])},
-        error => {console.log(error);this.message="ERROR : Email est utiliseé par un autre resposable";}
+        error => {console.log(error);this.message="ERROR : Email est utiliseé par un autre responsable";}
         
       );
   }

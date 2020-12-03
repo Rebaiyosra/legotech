@@ -12,7 +12,7 @@ import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 export class ModifierArticleComponent implements OnInit {
   Articles: Article[] = [];
   modifForm!: FormGroup;
-      
+      /*
 
   onChange(valeur:string)
     {
@@ -43,13 +43,13 @@ export class ModifierArticleComponent implements OnInit {
     )
     this.router.navigate(['liste-article']);
 
-  }
+  }*/
 
   
   constructor(private articlesService:ArticlesService,private router:Router,private formBuilder:FormBuilder) { }
   
   ngOnInit() {
-    
+    /*
     this.Articles= this.articlesService.lesArticles;
     this.modifForm = this.formBuilder.group(
       {
@@ -62,10 +62,10 @@ export class ModifierArticleComponent implements OnInit {
         desc:['',Validators.required],
         qt:['',Validators.required]
       }
-      )
+      )*/
 
   }
-
+/*
   public get id()
   { return this.modifForm.get('id'); }
   public get nom()
@@ -81,6 +81,6 @@ export class ModifierArticleComponent implements OnInit {
   public get desc()
   { return this.modifForm.get('nom'); }
   public get qt()
-  { return this.modifForm.get('qt'); }
+  { return this.modifForm.get('qt'); }*/
 
 }
