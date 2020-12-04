@@ -19,7 +19,61 @@ export class ArticlesService {
       "accessoires",
       "souris"
     ),
-   
+    new AccesoireInfo(
+      "a12",
+      "clavier",
+      26.500,
+      '../../assets/clavier.jpg',
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      10,
+      "Rampage",
+      "accessoires",
+      "clavier"
+    ),
+    new AccesoireInfo(
+      "a13",
+      "haut parleur",
+      55.000,
+      '../../assets/haut_parleur.jpg',
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      10,
+      "ADVANCE",
+      "accessoires",
+      "haut parleur"
+    ),
+    new AccesoireInfo(
+      "a14",
+      "Mini Lecteur De Cartes USB S-Link CR43",
+      2.500,
+      '../../assets/usb.jpg',
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      10,
+      "S-Link",
+      "accessoires",
+      "USB"
+    ),
+    new AccesoireInfo(
+      "a15",
+      "Adaptateur OTG Lecteur De Cartes Vers Micro USB / Rose",
+      7.000,
+      '../../assets/adaptateur.jpg',
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      10,
+      "S-Link",
+      "accessoires",
+      "USB"
+    ),
+    new AccesoireInfo(
+      "a16",
+      "Perche Télescopique Selfie Avec Bouton Intégré Violet",
+      5.000,
+      '../../assets/perche.jpg',
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      10,
+      "ADVANCE",
+      "accessoires",
+      "perche"
+    ),
   ]
 
   onAffiche(){

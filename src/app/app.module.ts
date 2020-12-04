@@ -22,6 +22,7 @@ import { AccessoiresComponent } from './categories/accessoires/accessoires/acces
 import { ImprimantesComponent } from './categories/imprimantes/imprimantes/imprimantes.component';
 import { ErreurComponent } from './erreur/erreur.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 
@@ -52,7 +53,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
