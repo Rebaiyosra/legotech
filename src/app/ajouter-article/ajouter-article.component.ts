@@ -23,7 +23,8 @@ export class AjouterArticleComponent implements OnInit {
   constructor(private articlesService:ArticlesService,private router:Router) { }
 
   ngOnInit() {
-    this.Articles=this.articlesService.lesArticles;
+   /* this.Articles=this.articlesService.lesAcc;*/
+  
   }/*
   onAdd(f:NgForm){
     this.articlesService.addArticle(this.id,this.nom,this.prix,this.desc,this.categorie,this.qt,this.image,this.dispo);

@@ -14,7 +14,7 @@ export class ImprimantesComponent implements OnInit {
   constructor(private articlesService:ArticlesService) { }
 
   ngOnInit(): void {
-   this.articles= this.articlesService.onAffiche();
+   /*this.articles= this.articlesService.onAffiche();*/
   }
   @Input() id!:number;
   @Input() libelle!:String;

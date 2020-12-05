@@ -14,6 +14,7 @@ import { OrdinateursComponent } from './categories/ordinateurs/ordinateurs/ordin
 import { ImprimantesComponent } from './categories/imprimantes/imprimantes/imprimantes.component';
 import { AccessoiresComponent } from './categories/accessoires/accessoires/accessoires.component';
 import { ErreurComponent } from './erreur/erreur.component';
+import{DetailArticleResComponent} from './detail-article-res/detail-article-res.component';
 const routes: Routes = [
   {path:'register-utilisateur', component:RegisterUtilisateurComponent},
   {path:'register-responsable', component:RegisterResponsableComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path:'ordinateurs',component:OrdinateursComponent },
   {path:'imprimantes',component:ImprimantesComponent },
   {path:'accessoires',component:AccessoiresComponent },
+  {path:'liste-article/:id', component:DetailArticleResComponent},
   {path:'', redirectTo:'acceuil-utilisateur', pathMatch:'full'},
   {path:'**',component:ErreurComponent}
   ];

@@ -1,40 +1,159 @@
 import { Injectable } from '@angular/core';
+
+
 import { AccesoireInfo } from '../Models/AccessoireInfo';
 import {Article} from '../Models/Article';
+import { Pc } from '../Models/Pc';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ArticlesService {
 
-  lesArticles= [
+  lesAcc= [
   
-    new AccesoireInfo(
-      "a11",
-      "souris",
-      6.500,
-      '../../assets/souris.jpg',
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
-      10,
-      "Macro",
-      "accessoires",
-      "souris"
-    ),
-   
-  ]
-
-  onAffiche(){
-    return this.lesArticles;
-  }
-  public getProduitById(id:string){
-    for (let i=0;i<this.lesArticles.length;i++)
     {
-      if(this.lesArticles[i]._id==id)
-      return this.lesArticles[i];
+      id:"a11",
+      nom:"souris",
+      prix:6.500,
+      image:'../../assets/souris.jpg',
+      desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      qte:10,
+      marque:"Macro",
+      type:"accessoires",
+      typeAcc:"souris"
+    },
+    {
+      id:"a12",
+      nom:"clavier",
+      prix:26.500,
+      image:'../../assets/clavier.jpg',
+      desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      qte:10,
+      marque:"Rampage",
+      type:"accessoires",
+      typeAcc:"clavier"
+    },
+    {
+      id:"a13",
+      nom:"haut parleur",
+      prix:55.000,
+      image:'../../assets/haut_parleur.jpg',
+      desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      qte:10,
+      marque:"ADVANCE",
+      type:"accessoires",
+      typeAcc:"haut parleur"
+    },
+    {
+      id:"a14",
+      nom:"Mini Lecteur De Cartes USB S-Link CR43",
+      prix:2.500,
+      image:'../../assets/usb.jpg',
+      desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      qte:10,
+      marque:"S-Link",
+      type:"accessoires",
+      typeAcc:"USB"
+    },
+    {
+      id:"a19",
+      nom:"Pc",
+      prix:6.500,
+      image:'../../assets/dell.jpg',
+      desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      qte:10,
+      marque:"Dell",
+      type:"PC",
+      typePc:"souris"
+    },
+   {
+    id:"b11",
+    nom:"BlocAlimentation 1",
+    prix:6.500,
+    image:'../../assets/souris.jpg',
+    desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+    qte:10,
+    marque:"Macro",
+    type:"bloc alimentation",
+    wattage:1000
+   },
+   {
+    id:"b12",
+    nom:"BlocAlimentation 2",
+    prix:6.500,
+    image:'../../assets/souris.jpg',
+    desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+    qte:10,
+    marque:"Macro",
+    type:"bloc alimentation",
+    wattage:2000
+   },
+   {  
+    id:"bo11",
+    nom:"boitier 1",
+    prix:6.500,
+    image:'../../assets/souris.jpg',
+    desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+    qte:10,
+    marque:"Macro",
+    type:"boitier",
+    format:"format 1"
+   },
+   {
+    id:"cm11",
+    nom:"CarteMere 1",
+    prix:6.500,
+    image:'../../assets/souris.jpg',
+    desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+    qte:10,
+    marque:"Macro",
+    type:"CarteMere",
+    typeCarte:"ddr3",
+    formatCarte:"format 1",
+    wattageCarte:12,
+    slotRam:12
+   }
+  ]
+ types:string[]=[];
+  notOcc:any=[];
+  onAffiche(){
+    return this.lesAcc;
+  }
+ onRemplir()
+ {  this.types=[]
+ 
+   for(let i=0;i<this.lesAcc.length;i++)
+   { 
+    
+    this.types.push(this.lesAcc[i].type);
+    
+   }
+   this.types = [...new Set(this.types)];
+   return this.types;
+ 
+ }
+ 
+  public getProduitById(id:string){
+    for (let i=0;i<this.lesAcc.length;i++)
+    {
+      if(this.lesAcc[i].id==id)
+      return this.lesAcc[i];
     }
     
     return null as any;
 
- }/*
+ }
+ public supprimer(ref:string){
+  for (let i=0;i<this.lesAcc.length;i++){
+  if(ref==this.lesAcc[i].id)
+     this.lesAcc.splice(i,1);
+   }
+     return this.lesAcc;
+    
+    
+  }
+ /*
  public addArticle(id: number,nom: string,prix: number,desc: string, categorie: string,qt: number,image: string,dispo: boolean){
    if(this.getProduitById(id)==null)
    {
@@ -44,16 +163,7 @@ export class ArticlesService {
    }
    return false;
  }
- public supprimer(ref:string){
-   for (let i=0;i<this.lesArticles.length;i++){
-   if(ref==this.lesArticles[i].id)
-      this.lesArticles.splice(i,1);
-    }
-      return this.lesArticles;
-     
-     
-   }
-  
+
   
    
  

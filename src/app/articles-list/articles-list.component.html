@@ -4,27 +4,41 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <app-menu-responsable-article></app-menu-responsable-article>
 <h2>Liste Articles</h2>
-<table class="container">
-    <tr>
-        <th>Image</th>
-        <th>ID article</th>
-        <th>Nom article</th>
-        <th>Prix</th>
-        <th>Quantité</th>
-        <th>Plus détaille</th>
-        <th></th>
-    </tr>
-    <tr  *ngFor="let a of articles"> 
-    
+<div class="container">
+    <select  name="art" id="article" [(ngModel)]="art" [ngModelOptions]="{standalone: true}">
         
-            <td><img [src]='"assets/"+a.image+""'></td>
-            <td> {{a.id}} </td>   
-            <td>{{a.nom}}</td>
-            <td>{{a.prix}} DT</td>
-            <td>15</td>
-            <td><button  class='btn btn-danger' >detaille</button></td>   
-            <td><button  class='btn btn-danger' >supprimer</button></td>
-    
-</tr>
+        <option *ngFor="let i of types" value="{{i}}">{{i}}</option>
+       
+    </select>
   
-</table>
+</div> 
+<div class="container">
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th>Image</th>
+                <th>ID article</th>
+                <th>Nom article</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Plus détaille</th>
+                <th></th>
+            </tr>
+        </thead>
+        
+       
+        <tr  *ngFor="let a of acc"> 
+            <ng-container *ngIf="art==a.type">
+                
+                <td><img [src]='"assets/"+a.image+""'></td>
+                <td> {{a.id}} </td>   
+                <td>{{a.nom}}</td>
+                <td>{{a.prix}} DT</td>
+                <td>15</td>
+                
+                <td><a  class="btn-save btn btn-danger btn-sm" [routerLink]="[a.id]">Infos</a></td>
+                <td (click)="onSupp(id)" ><i class="fa fa-trash" aria-hidden="true" style="font-size: 35px;"></i></td>  
+            </ng-container>
+        </tr>
+    </table>
+</div>

@@ -17,7 +17,7 @@
         
     <div class="form-group">
         <label for="ref">Reference </label>
-        <select id="emp" class="form-control"  formControlName="id"  (Change)="onChange($any($event.target).value)">
+        <select id="emp" class="form-control"  formControlName="id"  (Change)="onChange(($event.target).value)">
                 <ng-container  *ngFor='let t of Articles'> 
                 <option [value]="t.id" >{{t.id}}</option>
                 </ng-container>
