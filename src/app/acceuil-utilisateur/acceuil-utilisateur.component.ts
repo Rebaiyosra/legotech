@@ -1,6 +1,7 @@
 import { Component, OnInit ,Input} from '@angular/core';
 import { AccesoireInfo } from '../Models/AccessoireInfo';
 import { Article } from '../Models/Article';
+import { Pc } from '../Models/Pc';
 import { ArticlesService } from '../Services/articles.service';
 
 @Component({
@@ -10,11 +11,14 @@ import { ArticlesService } from '../Services/articles.service';
 })
 export class AcceuilUtilisateurComponent implements OnInit {
 
-  articles !: AccesoireInfo[];
+  accesoireInfo !: AccesoireInfo[];
+  pc !: Pc[];
+  
   
   constructor(private articlesService:ArticlesService) { }
 
-  slides: any = [[]];
+  slidesacc: any = [[]];
+  slidespc: any = [[]];
   chunk(arr: any, chunkSize: any) {
     let R = [];
     for (let i = 0, len = arr.length; i < len; i += chunkSize) {
@@ -23,8 +27,10 @@ export class AcceuilUtilisateurComponent implements OnInit {
     return R;
   }
   ngOnInit(): void {
-   this.articles= this.articlesService.onAffiche();
-   this.slides = this.chunk(this.articles, 3);
+   this.accesoireInfo= this.articlesService.onAfficheAccesoireInfos();
+   this.pc= this.articlesService.onAffichePcs();
+   this.slidesacc = this.chunk(this.accesoireInfo, 3);
+   this.slidespc = this.chunk(this.pc, 3);
   }
   @Input() id!:string;
   @Input() nom!:String;

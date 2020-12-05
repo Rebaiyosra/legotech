@@ -1,6 +1,6 @@
 import { Article } from './Article';
 
-export class AccesoireInfo extends Article{
+export class Boitier extends Article{
     public get format(): string {
         return this._format;
     }
