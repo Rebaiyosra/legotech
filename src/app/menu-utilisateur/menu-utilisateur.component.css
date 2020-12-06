@@ -84,3 +84,7 @@ li.dropdown {
 .dropright {
   position: relative;
 }
+a, a:hover{
+  text-decoration: none;
+  color: black;
+}

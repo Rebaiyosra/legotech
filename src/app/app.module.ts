@@ -24,6 +24,7 @@ import { ErreurComponent } from './erreur/erreur.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FooterComponent } from './footer/footer.component';
+import { LegoteurComponent } from './legoteur/legoteur.component';
 
 
 
@@ -48,6 +49,7 @@ import { FooterComponent } from './footer/footer.component';
     ImprimantesComponent,
     ErreurComponent,
     FooterComponent,
+    LegoteurComponent,
     
   ],
   imports: [
