@@ -192,6 +192,17 @@ export class ArticlesService {
  
  }
  
+ public getProduitByType(type:string){
+  for (let i=0;i<this.lesAcc.length;i++)
+  {
+    if(this.lesAcc[i].type==type)
+    return this.lesAcc[i];
+  }
+  
+  return null as any;
+
+}
+
   public getProduitById(id:string){
     for (let i=0;i<this.lesAcc.length;i++)
     {

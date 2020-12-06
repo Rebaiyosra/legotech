@@ -34,6 +34,24 @@
     </ul>
   </div>
 </nav>
+<div class="d-flex justify-content-around mb-3">
+  <div class="dropdown"><a class="p-2 dropbtn" href="javascript:void(0)">Toutes Catégories</a>
+    <div class="dropdown-content">
+      <a class="dropdown-item" [routerLink]="['/ordinateurs']">Ordinateurs</a>
+      <div class="dropdown dropright">
+        <a class="dropdown-item dropdown-toggle" data-toggle="dropdown" [routerLink]="['/accessoires']">Accessoires</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Souris</a>
+          <a class="dropdown-item" href="#">Clavier</a>
+          <a class="dropdown-item" href="#">USB</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="p-2" >Ordinateurs Occasion</a>
+  <a class="p-2" >Legoteur</a>
+  <a class="p-2" >Service Après Vente</a>
+</div>
 
 <!--<div class="topmenu text-xs-left hidden-sm-down">
   <div class="container">

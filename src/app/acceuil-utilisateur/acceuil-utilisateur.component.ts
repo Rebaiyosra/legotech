@@ -12,6 +12,8 @@ import { ArticlesService } from '../Services/articles.service';
 export class AcceuilUtilisateurComponent implements OnInit {
 
   articles ?: any[];
+  articlesacc ?: any[];
+  articlespc ?: any[];
   
   
   constructor(private articlesService:ArticlesService) { }
@@ -26,8 +28,9 @@ export class AcceuilUtilisateurComponent implements OnInit {
     return R;
   }
   ngOnInit(): void {
-   this.articles= this.articlesService.onAffiche();
-   this.slidesacc = this.chunk(this.articles, 3);
+   //this.articles= this.articlesService.onAffiche();
+   this.articlesacc=this.articlesService.getProduitByType("accessoires");
+   this.slidesacc = this.chunk(this.articlesacc, 3);
    this.slidespc = this.chunk(this.articles, 3);
   }
   @Input() id!:string;

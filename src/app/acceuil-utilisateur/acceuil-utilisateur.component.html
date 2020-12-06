@@ -3,13 +3,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <app-menu-utilisateur></app-menu-utilisateur>
-<div class="d-flex justify-content-around mb-3">
-    <a class="p-2" [routerLink]='["/ordinateurs"]'>Toutes Catégories</a>
-    <a class="p-2" [routerLink]='["/imprimantes"]'>Ordinateurs Occasion</a>
-    <a class="p-2" [routerLink]='["/accessoires"]'>Legoteur</a>
-    <a class="p-2" [routerLink]='["/accessoires"]'>Service Après Vente</a>
-</div>
-
 <mdb-carousel [animation]="'slide'">
   <mdb-carousel-item>
     <img class="d-block w-100" src="../../assets/images/c1.jpg" alt="First slide">
@@ -36,7 +29,7 @@
         <div class="row" class="d-flex justify-content-around">
           <div class="col-md-4" [ngClass]="{'d-none d-md-block': cardIndex !== 0}"
                *ngFor="let card of item; let cardIndex = index">
-        <mdb-card *ngIf="card.type==='accessoires'" class="my-1 part">
+        <mdb-card class="my-1 part">
         <mdb-card-img [src]="card.image" alt="Card image cap"></mdb-card-img>
         <mdb-card-body>
           <mdb-card-title>
