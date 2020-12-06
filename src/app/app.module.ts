@@ -23,6 +23,7 @@ import { ImprimantesComponent } from './categories/imprimantes/imprimantes/impri
 import { ErreurComponent } from './erreur/erreur.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -46,6 +47,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     AccessoiresComponent,
     ImprimantesComponent,
     ErreurComponent,
+    FooterComponent,
     
   ],
   imports: [

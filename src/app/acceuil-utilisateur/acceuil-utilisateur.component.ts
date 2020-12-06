@@ -11,8 +11,7 @@ import { ArticlesService } from '../Services/articles.service';
 })
 export class AcceuilUtilisateurComponent implements OnInit {
 
-  accesoireInfo !: AccesoireInfo[];
-  pc !: Pc[];
+  articles ?: any[];
   
   
   constructor(private articlesService:ArticlesService) { }
@@ -27,10 +26,9 @@ export class AcceuilUtilisateurComponent implements OnInit {
     return R;
   }
   ngOnInit(): void {
-   this.accesoireInfo= this.articlesService.onAfficheAccesoireInfos();
-   this.pc= this.articlesService.onAffichePcs();
-   this.slidesacc = this.chunk(this.accesoireInfo, 3);
-   this.slidespc = this.chunk(this.pc, 3);
+   this.articles= this.articlesService.onAffiche();
+   this.slidesacc = this.chunk(this.articles, 3);
+   this.slidespc = this.chunk(this.articles, 3);
   }
   @Input() id!:string;
   @Input() nom!:String;

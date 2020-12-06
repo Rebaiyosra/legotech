@@ -4,13 +4,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <app-menu-utilisateur></app-menu-utilisateur>
 <div class="d-flex justify-content-around mb-3">
-
     <a class="p-2" [routerLink]='["/ordinateurs"]'>Toutes Catégories</a>
     <a class="p-2" [routerLink]='["/imprimantes"]'>Ordinateurs Occasion</a>
     <a class="p-2" [routerLink]='["/accessoires"]'>Legoteur</a>
     <a class="p-2" [routerLink]='["/accessoires"]'>Service Après Vente</a>
-
-
 </div>
 
 <mdb-carousel [animation]="'slide'">
@@ -34,12 +31,12 @@
 <hr class="my-4">
 <h5 style="margin-left: 5%;">Top accessoires</h5>
 <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
-                  [animation]="'slide'">
+                  [animation]="'slide'" >
       <mdb-carousel-item *ngFor="let item of slidesacc; let i = index" style="margin-left: 3%;">
         <div class="row" class="d-flex justify-content-around">
           <div class="col-md-4" [ngClass]="{'d-none d-md-block': cardIndex !== 0}"
                *ngFor="let card of item; let cardIndex = index">
-        <mdb-card class="my-1 part">
+        <mdb-card *ngIf="card.type==='accessoires'" class="my-1 part">
         <mdb-card-img [src]="card.image" alt="Card image cap"></mdb-card-img>
         <mdb-card-body>
           <mdb-card-title>
@@ -57,19 +54,17 @@
 <!--Top accessoires-->
 
 
-
 <!--Top Nouveautés-->
-
 
 <hr class="my-4">
 <h5 style="margin-left: 5%;">Top Nouveautés</h5>
 <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
                   [animation]="'slide'">
-      <mdb-carousel-item *ngFor="let item of slidespc; let i = index" style="margin-left: 3%;">
+      <mdb-carousel-item *ngFor="let item of slidesacc; let i = index" style="margin-left: 3%;">
         <div class="row" class="d-flex justify-content-around">
           <div class="col-md-4" [ngClass]="{'d-none d-md-block': cardIndex !== 0}"
                *ngFor="let card of item; let cardIndex = index">
-        <mdb-card class="my-1 part">
+        <mdb-card *ngIf="card.type==='Pc'"  class="my-1 part">
         <mdb-card-img [src]="card.image" alt="Card image cap"></mdb-card-img>
         <mdb-card-body>
           <mdb-card-title>
@@ -85,132 +80,6 @@
 </mdb-carousel>
 
 
-<!-- Footer -->
-<footer class="page-footer font-small bg-primary text-white-50 pt-4">
+<!--Top Nouveautés-->
 
-  <!-- Footer Links -->
-  <div class="container text-center text-md-left">
-
-    <!-- Grid row -->
-    <div class="row">
-
-      <!-- Grid column -->
-      <div class="col-md-4 mx-auto">
-
-        <!-- Content -->
-        <h5 class="font-weight-bold text-uppercase text-white mt-3 mb-4">Informations Légales</h5>
-        <p>> Livraison</p>
-        <p>> Condition d'utilisation</p>
-        <p>> Paiement sécurisé</p>
-
-      </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase text-white mt-3 mb-4">Notre Société</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <p>> Contactez-nous</p>
-          </li>
-          <li>
-            <p>> Magasins</p>
-          </li>
-          <li>
-            <p>> A propos</p>
-          </li>
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-2 mx-auto">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase text-white mt-3 mb-4">Contact</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <p>Tunis</p>
-          </li>
-          <li>
-            <p>Charguia 2</p>
-          </li>
-          <li>
-            <p>+21671777777</p>
-          </li>
-          <li>
-            <p>contact@legotech.com.tn</p>
-          </li>
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-
-    </div>
-    <!-- Grid row -->
-
-  </div>
-  <!-- Footer Links -->
-
-  <hr>
-
-  <!-- Social buttons -->
-  <ul class="list-unstyled list-inline text-center">
-    <li class="list-inline-item">
-      <a class="btn-floating btn-fb mx-1">
-        <i class="fa fa-facebook-f"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a class="btn-floating btn-tw mx-1">
-        <i class="fa fa-twitter"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a class="btn-floating btn-gplus mx-1">
-        <i class="fa fa-youtube"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a class="btn-floating btn-gplus mx-1">
-        <i class="fa fa-pinterest-p"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a class="btn-floating btn-gplus mx-1">
-        <i class="fa fa-instagram"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a class="btn-floating btn-li mx-1">
-        <i class="fa fa-linkedin"> </i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a class="btn-floating btn-dribbble mx-1">
-        <i class="fa fa-dribbble"> </i>
-      </a>
-    </li>
-  </ul>
-  <!-- Social buttons -->
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="#"> Legotech.com</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
+<app-footer></app-footer>

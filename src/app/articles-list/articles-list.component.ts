@@ -10,7 +10,7 @@ import { ArticlesService } from '../Services/articles.service';
 })
 export class ArticlesListComponent implements OnInit {
 
-  articles !: AccesoireInfo[];
+  articles ?: any[];
   
   constructor(private articlesService:ArticlesService) { }
 

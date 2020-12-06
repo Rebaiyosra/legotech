@@ -9,12 +9,12 @@ import { ArticlesService } from 'src/app/Services/articles.service';
 })
 export class OrdinateursComponent implements OnInit {
 
-  articles !: Article[];
+  articles ?: any[];
   
   constructor(private articlesService:ArticlesService) { }
 
   ngOnInit(): void {
-   this.articles= this.articlesService.onAffichePcs();
+   this.articles= this.articlesService.onAffiche();
   }
   @Input() id!:number;
   @Input() libelle!:String;
