@@ -1,0 +1,113 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<app-menu-responsable-article></app-menu-responsable-article>
+<ng-container *ngFor="let a of lesArticles">
+    <ul class="list-group container" *ngIf="(a.id==identifiant)">
+        <li class="list-group-item">
+            <img src="{{a.image}}">
+        </li>
+        <li class="list-group-item" >
+            <span >Référence: </span>{{a.id}}
+        </li>
+        <li class="list-group-item" >
+            <span >type: </span>{{a.type}}
+        </li>
+        <li class="list-group-item">
+           <span>Nom de l'article: </span>{{a.nom }}
+        </li>
+        <li class="list-group-item">
+            <span>Prix: </span>{{a.prix}}
+        </li>
+        
+        <li class="list-group-item">
+            <span>Description: </span>{{a.desc}}
+        </li>
+        <li class="list-group-item">
+            <span>Quantité: </span>{{a.qte}}
+        </li>
+        <div *ngIf="(a.type=='accessoires')">
+            <li class="list-group-item">
+                <span>type d'accessoire : </span>{{a.typeAcc}}
+            </li>
+        </div> 
+        <div *ngIf="(a.type=='boitier')">
+            <li class="list-group-item">
+                <span>Format : </span>{{a.formatBoitier}}
+            </li>
+        </div> 
+        <div *ngIf="(a.type=='ram')">
+            <li class="list-group-item">
+                <span>Fréquence : </span>{{a.Frequence}}
+            </li>
+            <li class="list-group-item">
+                <span>Stockage : </span>{{a.stockage}}
+            </li>
+            <li class="list-group-item">
+                <span>ddr : </span>{{a.ddrRam}}
+            </li>
+        </div> 
+        <div *ngIf="(a.type=='bloc alimentation')">
+            <li class="list-group-item">
+                <span>Wattage : </span>{{a.wattage}}
+            </li>
+        </div> 
+        <div *ngIf="(a.type=='disque dur')">
+            <li class="list-group-item">
+                <span>Capacité : </span>{{a.capacite}}
+            </li>
+            <li class="list-group-item">
+                <span>Type disque dur : </span>{{a.typeDisque}}
+            </li>
+        </div> 
+        <div *ngIf="(a.type=='Carte mère')">
+            <li class="list-group-item">
+                <span>ddr : </span>{{a.ddr}}
+            </li>
+            <li class="list-group-item">
+                <span>format : </span>{{a.formatCarte}}
+            </li>
+            <li class="list-group-item">
+                <span>Wattage : </span>{{a.wattageCarte}}
+            </li>
+            <li class="list-group-item">
+                <span>Slot RAM : </span>{{a.slotRam}}
+            </li>
+        </div> 
+        <div *ngIf="(a.type=='Pc')">
+            <li class="list-group-item">
+                <span>Etat: </span>{{a.etat}}
+            </li>
+            <li class="list-group-item">
+                <span>Type de RAM: </span>{{a.typeRam}}
+            </li>
+            <li class="list-group-item">
+                <span>Taille de RAM: </span>{{a.tailleRam}}
+            </li>
+            <li class="list-group-item">
+                <span>Carte graphique: </span>{{a.carteGraph}}
+            </li>
+            <li class="list-group-item">
+                <span>Processeur: </span>{{a.processeur}}
+            </li>
+            <li class="list-group-item">
+                <span>Type disque : </span>{{a.typeDis}}
+            </li>
+            <li class="list-group-item">
+                <span>Taille disque: </span>{{a.tailleDis}}
+            </li>
+            <li class="list-group-item">
+                <span>Taille de carte graphique: </span>{{a.tailleCarteGraph}}
+            </li>
+            <li class="list-group-item">
+                <span>Taille d'ecran: </span>{{a.tailleEcran}}
+            </li>
+        </div> 
+        <li class="list-group-item">
+            <button class="btn btn-primary" (click)="onNavigate()">Retour au articles</button>
+        </li>  
+        
+    </ul>
+    </ng-container>
+    <div>

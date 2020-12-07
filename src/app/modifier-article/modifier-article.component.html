@@ -1,96 +1,222 @@
-<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <app-menu-responsable-article></app-menu-responsable-article>
-<form [formGroup]="modifForm" (ngSubmit)="modif()">
-
+<form  #f="ngForm">
     <div class="row justify-content-center">
-            <div class="card">
+        <div class="card">
             <div class="card-header">
-                    <h3>Modifier article</h3>
+                <h3>Modifier article</h3>
             </div>
-            <div class="card-body"> 
-            
-    
-    
-        
-    <div class="form-group">
-        <label for="ref">Reference </label>
-        <select id="emp" class="form-control"  formControlName="id"  (Change)="onChange($any($event.target).value)">
-                <ng-container  *ngFor='let t of Articles'> 
-                <option [value]="t.id" >{{t.id}}</option>
-                </ng-container>
-            </select>
+    <div class="card-body">    
+    <div class="form-group" >
+        <label for="ref">Réference </label>
+        <input type="text" id="ref" name="id" placeholder="Entrer une référence" class="form-control" [(ngModel)]="lesArticles.id" required #reference="ngModel">
     </div>
-  
-    
-    
-  
-        
+
+    <div [hidden]="!reference.errors?.required || reference.pristine" class="alert alert-danger">Champs obligatoire</div>    
+   
     <div class="form-group">
         <label for="n">Nom </label>
-        <input type="text" id="n" placeholder="Enter un nom d'article"
-         name="nom"  class="form-control" formControlName="nom" >
+        <input type="text" id="n" placeholder="Enter un nom d'article" name="nom"  class="form-control" [(ngModel)]="lesArticles.nom" required #name="ngModel">
     </div> 
-    <div *ngIf="nom?.invalid && nom?.dirty" class="alert alert-danger">
-        nom est invalide
-        </div>
     
+    <div [hidden]="!name.errors?.required || name.pristine" class="alert alert-danger">Champs obligatoire</div>
     
     <div class="form-group">
     <label for="img">Image </label>
-    <input type="file" id="img" name="image" placeholder="image d'article" class="form-control"
-         formControlName="image"> 
-               
+        <input type="file" id="img"  name="img"   class="form-control" [(ngModel)]="lesArticles.img" required #image="ngModel">
     </div>     
-    <div *ngIf="image?.invalid && image?.dirty" class="alert alert-danger">
-        Image est invalide
-        </div>
+
+    <div [hidden]="!image.errors?.required || image.pristine" class="alert alert-danger">Champs obligatoire</div>
+    
     <div class="form-group">
         <label for="pr">Prix </label>
-        <input type="number" id="pr" name="prix" placeholder="Entrer un prix" class="form-control"
-         formControlName="prix"> 
+        <input type="number" id="pr" name="prix" placeholder="Entrer un prix" class="form-control" [(ngModel)]="lesArticles.prix" required #p="ngModel">
     </div>
-    <div *ngIf="prix?.invalid && prix?.dirty" class="alert alert-danger">
-        Prix est invalide
-        </div>
     
+    <div [hidden]="!p.errors?.required && p.pristine" class="alert alert-danger">Champ obligatoire</div>
+
+    <div class="form-group">
+        <label for="desc">Description </label>
+        <textarea class="form-control" id="desc" rows="3" name="desc"  [(ngModel)]="lesArticles.desc" required #des="ngModel"></textarea>
+    </div>
     
+    <div [hidden]="!des.errors?.required && des.pristine" class="alert alert-danger">Champ obligatoire</div>
     
     <div class="form-group">
-        <label for="d">Catégorie </label>
-        <input type="text" id="d" name="categorie"  placeholder="" class="form-control" formControlName="categorie" >
-     </div>
-     
-    <div class="form-group">
-        <label for="di">Disponibilité </label>
-        <input type="text" id="di" name="dispo" placeholder="Ecriver true ou false" 
-         class="form-control" formControlName="dispo" >
+        <label for="qt">Quantité </label>
+        <input type="number" id="qt" name="qt" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.qte" required #qu="ngModel">
     </div>
-    <div *ngIf="dispo?.invalid && dispo?.dirty" class="alert alert-danger">
-        Disponibilité est invalide
+    
+    <div [hidden]="!qu.errors?.required && qu.pristine" class="alert alert-danger">Champ obligatoire</div>
+    <div class="form-group">
+        <label for="type">type </label>
+        <input type="text" id="type" name="type" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.type" required #t="ngModel">
+    </div>
+    
+    <div [hidden]="!t.errors?.required && t.pristine" class="alert alert-danger">Champ obligatoire</div>
+
+
+                
+       
+        <div *ngIf="(lesArticles.type=='accessoires')">
+            <div class="form-group">
+                <label for="q">type Accessoire</label>
+                <input type="text" id="typeAcc" name="typeAcc" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.typeAcc" required #typeAcc="ngModel">
+            </div>
+            
+            <div [hidden]="!typeAcc.errors?.required && typeAcc.pristine" class="alert alert-danger">Champ obligatoire</div>
         </div>
-    <div class="form-group">
-        <label for="de">Description </label>
-        <input type="text" id="de" name="desc" placeholder="Ecriver une description" 
-        class="form-control" formControlName="desc">
-    </div>
-    <div *ngIf="desc?.invalid && desc?.dirty" class="alert alert-danger">
-        Description est invalide
+
+        <div *ngIf="(lesArticles.type=='ram')">
+            <div class="form-group">
+                <label for="q">Fréquence </label>
+                <input type="text" id="frequence" name="frequence" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.frequence" required #freq="ngModel">
+            </div>
+            
+            <div [hidden]="!freq.errors?.required && freq.pristine" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Stockage </label>
+                <input type="number" id="stockage" name="stockage" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.stockage" required #stock="ngModel">
+            </div>
+            
+            <div [hidden]="!stock.errors?.required && stock.pristine" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">ddr </label>
+                <input type="text" id="ddr" name="ddr" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.ddr" required #d="ngModel">
+            </div>
+            <div [hidden]="!d.errors?.required && d.pristine" class="alert alert-danger">Champ obligatoire</div>
         </div>
-    <div class="form-group">
-        <label for="q">Quantité </label>
-        <input type="number" id="q" name="qt" placeholder="Entrer une quantité"
-         class="form-control" formControlName="qt">
-    </div>
-    <div *ngIf="qt?.invalid && qt?.dirty" class="alert alert-danger">
-        Quantité est invalide
+
+
+        <div *ngIf="(lesArticles.type=='bloc alimentation')">
+            <div class="form-group">
+                <label for="q">Wattage </label>
+                <input type="number" id="wattage" name="wattage" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.wattage" required #wat="ngModel">
+            </div>
+            
+            <div [hidden]="!wat.errors?.required && wat.pristine" class="alert alert-danger">Champ obligatoire</div>
         </div>
-    <div class="form-group">
-    <button type ="submit" class='btn btn-info float-right color-modifier' [disabled]="modifForm.invalid" >Modifier</button> 
+
+
+
+
+        <div *ngIf="(lesArticles.type=='Pc')">
+            <div class="form-group">
+                <label for="q">type Ram </label>
+                <input type="text" id="typeRam" name="typeRam" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.typeRam" required #tyRam="ngModel">
+            </div>
+            
+            <div [hidden]="!tyRam.errors?.required && tyRam.pristine" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Taille Ram </label>
+                <input type="number" id="tailleRam" name="tailleRam" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.tailleRam" required #taRam="ngModel">
+            </div>
+            
+            <div [hidden]="!taRam.errors?.required && taRam.pristine" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Carte graphique </label>
+                <input type="text" id="carteGraph" name="carteGraph" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.carteGraph" required #carteG="ngModel">
+            </div>
+            
+            <div [hidden]="!carteG.errors?.required && carteG.pristine" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Proccesseur </label>
+                <input type="text" id="processeur" name="processeur" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.processeur" required #process="ngModel">
+            </div>
+            
+            <div [hidden]="!process.errors?.required && process.pristine" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">type disque </label>
+                <input type="text" id="typeDis" name="typeDis" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.typeDis" required #typeDisq="ngModel">
+            </div>
+            
+            <div [hidden]="!typeDisq.errors?.required && typeDisq.pristine" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">taille disque </label>
+                <input type="number" id="tailleDis" name="tailleDis" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.tailleDis" required #tailleD="ngModel">
+            </div>
+            
+            <div [hidden]="!tailleD.errors?.required && tailleD.pristine" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">taille carte graphique </label>
+                <input type="text" id="tailleCarteGraph" name="tailleCarteGraph" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.tailleCarteGraph" required #tailleCarte="ngModel">
+            </div>
+            
+            <div [hidden]="!tailleCarte.errors?.required && tailleCarte.pristine" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">taille écran </label>
+                <input type="number" id="tailleEcran" name="tailleEcran" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.tailleEcran" required #tailleEcr="ngModel">
+            </div>
+            
+            <div [hidden]="!tailleEcr.errors?.required && tailleEcr.pristine" class="alert alert-danger">Champ obligatoire</div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div *ngIf="(lesArticles.type=='Carte mère')">
+            <div class="form-group">
+                <label for="q">ddr </label>
+                <input type="text" id="ddrCarte" name="ddrCarte" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.ddrCarte" required #ddrCart="ngModel">
+            </div>
+            
+            <div [hidden]="!ddrCart.errors?.required && ddrCart.pristine" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Format </label>
+                <input type="text" id="formatCarte" name="formatCarte" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.formatCarte" required #formatCart="ngModel">
+            </div>
+            
+            <div [hidden]="!formatCart.errors?.required && formatCart.pristine" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Wattage </label>
+                <input type="text" id="wattageCarte" name="wattageCarte" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.wattageCarte" required #wattageCart="ngModel">
+            </div>
+            
+            <div [hidden]="!wattageCart.errors?.required && wattageCart.pristine" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Slot RAM </label>
+                <input type="number" id="slotRam" name="slotRam" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.slotRam" required #slotRAM="ngModel">
+            </div>
+            
+            <div [hidden]="!slotRAM.errors?.required && slotRAM.pristine" class="alert alert-danger">Champ obligatoire</div>
+        </div>
+        <div *ngIf="(lesArticles.type=='disque dur')">
+            <div class="form-group">
+                <label for="q">Capacité </label>
+                <input type="text" id="capacite" name="capacite" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.capacite" required #cap="ngModel">
+            </div>
+            
+            <div [hidden]="!cap.errors?.required && cap.pristine" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Type dique dur </label>
+                <input type="text" id="typeDisqueDur" name="typeDisqueDur" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.typeDisque" required #DisqueDur="ngModel">
+            </div>
+            
+            <div [hidden]="!DisqueDur.errors?.required && DisqueDur.pristine" class="alert alert-danger">Champ obligatoire</div>
+        </div>
+        <div *ngIf="(lesArticles.type=='boitier')">
+            <div class="form-group">
+                <label for="q">Format </label>
+                <input type="text" id="formatBoitier" name="formatBoitier" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="lesArticles.formatBoitier" required #formatBoit="ngModel">
+            </div>
+            
+            <div [hidden]="!formatBoit.errors?.required && formatBoit.pristine" class="alert alert-danger">Champ obligatoire</div>
+        </div>
+      
+        <div class="form-group">
+             <button type ="submit"class='btn btn-info float-right color-modifier' [disabled]="f.errors?.required">Modifier</button> 
+        </div>
+
     </div>
     </div>
     </div>
-    </div>
-</form>-->
+</form>

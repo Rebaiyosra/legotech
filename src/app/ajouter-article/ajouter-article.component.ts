@@ -10,20 +10,39 @@ import {Router} from '@angular/router';
   styleUrls: ['./ajouter-article.component.css']
 })
 export class AjouterArticleComponent implements OnInit {
-  Articles ?: any[] = [];
+  
   nom!: string;
   id!: string;
-  image!: string;
+  img!: string;
   prix!: number;
-  dispo:boolean=false;
-  categorie!: string;
+  type?:string;
+  frequence?:string;
+  stockage?:number;
+  wattage?:number;
+  ddr?:string
   desc!: string;
   qt!: number;
-
+  art?:string;
+  typeRam?:string;
+  tailleRam?:number;
+  carteGraphique?:string
+  processeur?:string;
+  typeDisque?:string;
+  tailleDisque?:number;
+  tailleCarteGraphique?:string;
+  tailleEcran?:number;
+  ddrCarte?:string;
+  formatCarte?:string;
+  wattageCarte?:number;
+  slotRam?:number;
+  capacite?:number;
+  typeDisqueDur?:number;
+  formatBoitier?:string;
   constructor(private articlesService:ArticlesService,private router:Router) { }
 
   ngOnInit() {
-    this.Articles=this.articlesService.lesAcc;
+   /* this.Articles=this.articlesService.lesAcc;*/
+  
   }/*
   onAdd(f:NgForm){
     this.articlesService.addArticle(this.id,this.nom,this.prix,this.desc,this.categorie,this.qt,this.image,this.dispo);

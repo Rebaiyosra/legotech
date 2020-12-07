@@ -1,0 +1,12 @@
+img{
+    width:250px;
+    height: 250px;
+    position: relative;
+    left:40%
+}
+ul{
+    margin-top: 20px;
+}
+ul li span{
+    font-weight: bold;
+}

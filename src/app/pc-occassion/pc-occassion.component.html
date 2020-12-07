@@ -1,0 +1,136 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<app-menu-responsable-article></app-menu-responsable-article>
+<div class="d-flex justify-content-around mb-3">
+  <a class="p-2" [routerLink]='["/ordinateurs"]'>Toutes Catégories</a>
+  <a class="p-2" [routerLink]='["/pc-occassion"]'>Ordinateurs Occasion</a>
+  <a class="p-2" [routerLink]='["/accessoires"]'>Legoteur</a>
+  <a class="p-2" [routerLink]='["/accessoires"]'>Service Après Vente</a>
+</div>
+
+<form  #f="ngForm">
+    <div class="row justify-content-center">
+        <div class="card">
+           
+    <div class="card-body">    
+   
+   
+    <div class="form-group">
+        <label for="n">Nom </label>
+        <input type="text" id="n" placeholder="Enter un nom d'article" name="nom"  class="form-control" [(ngModel)]="nom" required #name="ngModel">
+    </div> 
+    
+    <div *ngIf="!name.errors?.required || name.touched" class="alert alert-danger">Champs obligatoire</div>
+    
+    <div class="form-group">
+    <label for="img">Image </label>
+        <input type="file" id="img"  name="img"   class="form-control" [(ngModel)]="img" required #image="ngModel">
+    </div>     
+
+    <div [hidden]="!image.errors?.required || image.pristine" class="alert alert-danger">Champs obligatoire</div>
+    
+    <div class="form-group">
+        <label for="pr">Prix </label>
+        <input type="number" id="pr" name="prix" placeholder="Entrer un prix" class="form-control" [(ngModel)]="prix" required #p="ngModel">
+    </div>
+    
+    <div *ngIf="p.invalid && p.touched" class="alert alert-danger">Champ obligatoire</div>
+
+    <div class="form-group">
+        <label for="de">Description </label>
+        <textarea class="form-control" id="desc" rows="3" name="desc"  [(ngModel)]="desc" required #des="ngModel"></textarea>
+    </div>
+    
+    <div *ngIf="des.invalid && des.touched" class="alert alert-danger">Champ obligatoire</div>
+    
+    <div class="form-group">
+        <label for="q">Quantité </label>
+        <input type="number" id="q" name="qt" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="qt" required #qu="ngModel">
+    </div>
+    
+    <div *ngIf="qu.invalid && qu.touched" class="alert alert-danger">Champ obligatoire</div>
+
+    
+       
+
+
+       
+
+
+
+
+        
+            <div class="form-group">
+                <label for="q">type Ram </label>
+                <input type="text" id="typeRam" name="typeRam" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="typeRam" required #tyRam="ngModel">
+            </div>
+            
+            <div *ngIf="tyRam.invalid && tyRam.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Taille Ram </label>
+                <input type="text" id="tailleRam" name="tailleRam" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="tailleRam" required #taRam="ngModel">
+            </div>
+            
+            <div *ngIf="taRam.invalid && taRam.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Carte graphique </label>
+                <input type="text" id="carteGraphique" name="carteGraphique" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="carteGraphique" required #carteGraph="ngModel">
+            </div>
+            
+            <div *ngIf="carteGraph.invalid && carteGraph.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Proccesseur </label>
+                <input type="text" id="processeur" name="processeur" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="processeur" required #process="ngModel">
+            </div>
+            
+            <div *ngIf="process.invalid && process.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">type disque </label>
+                <input type="text" id="typeDisque" name="typeDisque" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="typeDisque" required #typeDisq="ngModel">
+            </div>
+            
+            <div *ngIf="typeDisq.invalid && typeDisq.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">taille disque </label>
+                <input type="text" id="tailleDisque" name="tailleDisque" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="tailleDisque" required #tailleDis="ngModel">
+            </div>
+            
+            <div *ngIf="tailleDis.invalid && tailleDis.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">taille carte graphique </label>
+                <input type="text" id="tailleCarteGraphique" name="tailleCarteGraphique" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="tailleCarteGraphique" required #tailleCarte="ngModel">
+            </div>
+            
+            <div *ngIf="tailleCarte.invalid && tailleCarte.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">taille écran </label>
+                <input type="text" id="tailleEcran" name="tailleEcran" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="tailleEcran" required #tailleEcr="ngModel">
+            </div>
+            
+            <div *ngIf="tailleEcr.invalid && tailleEcr.touched" class="alert alert-danger">Champ obligatoire</div>
+        
+
+
+
+
+
+
+
+
+
+      
+        <div class="form-group">
+             <button type ="submit"class='btn btn-success float-right ' [disabled]="f.invalid">déposer</button> 
+        </div>
+
+    </div>
+    </div>
+    </div>
+</form>
+
+
+<app-footer></app-footer>

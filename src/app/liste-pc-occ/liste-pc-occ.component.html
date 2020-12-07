@@ -1,0 +1,27 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<app-menu-utilisateur></app-menu-utilisateur>
+<div class="container">
+    <button class="btn btn-success deposer" [routerLink]="['/pc-occassion']">Deposer Votre pc</button>
+</div>
+   
+<div class="liste">
+    <ng-container  *ngFor="let a of articles"> 
+        <div *ngIf="(a.type==='Pc') && (a.etat==='occassion')" class="d-flex justify-content-around">
+            <div class="p-2 border">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h5> <img [src]='"assets/"+a.image+""'>
+                            {{a.nom}} </h5>
+                        <p>{{a.desc}}</p>
+                        <p> <b>prix </b>{{a.prix}}</p>
+                        <button class="btn btn-info" style="float:right"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Ajouter au panier</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ng-container>
+</div>
+<app-footer></app-footer>

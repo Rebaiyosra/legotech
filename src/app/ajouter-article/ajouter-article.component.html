@@ -3,81 +3,228 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <app-menu-responsable-article></app-menu-responsable-article>
-<form (ngSubmit)="onNavigate()" #f="ngForm"> <!--onAdd(f);-->
+<form  #f="ngForm"><!-- (ngSubmit)="onAdd(f);onNavigate()"-->
     <div class="row justify-content-center">
         <div class="card">
             <div class="card-header">
-    <h3>Ajouter article</h3>
+                <h3>Ajouter article</h3>
             </div>
-            <div class="card-body">
-    
-    
-        
+    <div class="card-body">    
     <div class="form-group">
-        <label for="ref">Reference </label>
-        <input type="text" id="ref" name="id" placeholder="Entrer unr référence" class="form-control" [(ngModel)]="id" required #reference="ngModel">
+        <label for="ref">Réference </label>
+        <input type="text" id="ref" name="id" placeholder="Entrer une référence" class="form-control" [(ngModel)]="id" required #reference="ngModel">
     </div>
-    
-    <div [hidden]="!reference.errors?.required || reference.pristine" class="alert alert-danger">La réference est un champ obligatoire</div>
-    
-        
+
+    <div *ngIf="!reference.errors?.required || reference.touched" class="alert alert-danger">Champs obligatoire</div>    
+   
     <div class="form-group">
         <label for="n">Nom </label>
-        <input type="text" id="n" placeholder="Enter un nom d'article" name="nom" pattern="[A-Z][a-zA-Z]+"  class="form-control" [(ngModel)]="nom" required #name="ngModel">
+        <input type="text" id="n" placeholder="Enter un nom d'article" name="nom"  class="form-control" [(ngModel)]="nom" required #name="ngModel">
     </div> 
     
-    <div *ngIf="name.errors?.pattern && name.dirty" class="alert alert-danger">Le nom a un format incorrect</div>
+    <div *ngIf="!name.errors?.required || name.touched" class="alert alert-danger">Champs obligatoire</div>
     
     <div class="form-group">
     <label for="img">Image </label>
-        <select class="form-control" id="img" name="image" [(ngModel)]="image" required #im="ngModel"> 
-            <option value="../assets/dell.jpg">PC DELL</option>
-            <option value="../assets/souris.jpg">Souris</option>
-        </select> 
+        <input type="file" id="img"  name="img"   class="form-control" [(ngModel)]="img" required #image="ngModel">
     </div>     
-    <div [hidden]="!im.errors?.required || im.pristine" class="alert alert-danger">La réference est un champ obligatoire</div>
+
+    <div [hidden]="!image.errors?.required || image.pristine" class="alert alert-danger">Champs obligatoire</div>
     
     <div class="form-group">
         <label for="pr">Prix </label>
         <input type="number" id="pr" name="prix" placeholder="Entrer un prix" class="form-control" [(ngModel)]="prix" required #p="ngModel">
     </div>
     
-    <div *ngIf="p.invalid && p.dirty" class="alert alert-danger">Le prix doit être un nombre</div>
-    
-    
-    <div class="form-group">
-        <label for="d">Catégorie </label>
-        <input type="string" id="d" name="categorie"  class="form-control" [(ngModel)]="categorie" required #ddf="ngModel">
-     </div>
-    
-    
-    <div class="form-group">
-        <label for="di">Disponibilité </label>
-        <input type="text" id="di" name="dispo" placeholder="Ecriver true ou false"  pattern="true|false" class="form-control" [(ngModel)]="dispo" required #dis="ngModel">
-    </div>
-    
-    <div *ngIf="dis.errors?.pattern && dis.dirty" class="alert alert-danger">La disponibilité a un format incorrect</div>
-    
-    
+    <div *ngIf="p.invalid && p.touched" class="alert alert-danger">Champ obligatoire</div>
+
     <div class="form-group">
         <label for="de">Description </label>
-        <input type="text" id="de" name="desc" placeholder="Ecriver une description" class="form-control" [(ngModel)]="desc" required #des="ngModel">
+        <textarea class="form-control" id="desc" rows="3" name="desc"  [(ngModel)]="desc" required #des="ngModel"></textarea>
     </div>
     
-    <div *ngIf="des.invalid && des.dirty" class="alert alert-danger">La description a un format incorrect</div>
-    
+    <div *ngIf="des.invalid && des.touched" class="alert alert-danger">Champ obligatoire</div>
     
     <div class="form-group">
         <label for="q">Quantité </label>
         <input type="number" id="q" name="qt" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="qt" required #qu="ngModel">
     </div>
     
-    <div *ngIf="qu.invalid && qu.dirty" class="alert alert-danger">La quantité doit être un nombre</div>
-    
+    <div *ngIf="qu.invalid && qu.touched" class="alert alert-danger">Champ obligatoire</div>
+
     <div class="form-group">
-    <button type ="submit"class='btn btn-info float-right color-modifier' [disabled]="f.invalid">Ajouter</button> 
-    </div>
-    </div>
+        <label for="d">type </label>
+            <select  name="art" id="article" [(ngModel)]="art" [ngModelOptions]="{standalone: true}">
+                <option class="hidden"  selected disabled >Articles </option>
+                <option value="accessoires">Accesoire et périphérique</option>
+                <option value="Pc">pc</option>
+                <option value="carte mère">carte mère</option>
+                <option value="disque dur">disque dur</option>
+                <option value="carte graphique">carte graphique</option>
+                <option value="boitier">Boitier</option>
+                <option value="bloc alimentation">Bloc d'alimentation</option>
+                <option value="ram">RAM</option>
+                <option value="proccesseur">Proccesseur</option>
+            </select>
+         
+                
+        </div> 
+        <div *ngIf="(art=='accessoires')">
+            <div class="form-group">
+                <label for="q">type </label>
+                <input type="text" id="type" name="type" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="type" required #typeAcc="ngModel">
+            </div>
+            
+            <div *ngIf="typeAcc.invalid && typeAcc.touched" class="alert alert-danger">Champ obligatoire</div>
         </div>
+
+        <div *ngIf="(art=='ram')">
+            <div class="form-group">
+                <label for="q">Fréquence </label>
+                <input type="text" id="frequence" name="frequence" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="frequence" required #freq="ngModel">
+            </div>
+            
+            <div *ngIf="freq.invalid && freq.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Stockage </label>
+                <input type="number" id="stockage" name="stockage" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="stockage" required #stock="ngModel">
+            </div>
+            
+            <div *ngIf="stock.invalid && stock.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">ddr </label>
+                <input type="text" id="ddr" name="ddr" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="ddr" required #d="ngModel">
+            </div>
+            <div *ngIf="d.invalid && d.touched" class="alert alert-danger">Champ obligatoire</div>
+        </div>
+
+
+        <div *ngIf="(art=='bloc alimentation')">
+            <div class="form-group">
+                <label for="q">Wattage </label>
+                <input type="number" id="wattage" name="wattage" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="wattage" required #wat="ngModel">
+            </div>
+            
+            <div *ngIf="wat.invalid && wat.touched" class="alert alert-danger">Champ obligatoire</div>
+        </div>
+
+
+
+
+        <div *ngIf="(art=='Pc')">
+            <div class="form-group">
+                <label for="q">type Ram </label>
+                <input type="text" id="typeRam" name="typeRam" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="typeRam" required #tyRam="ngModel">
+            </div>
+            
+            <div *ngIf="tyRam.invalid && tyRam.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Taille Ram </label>
+                <input type="number" id="tailleRam" name="tailleRam" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="tailleRam" required #taRam="ngModel">
+            </div>
+            
+            <div *ngIf="taRam.invalid && taRam.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Carte graphique </label>
+                <input type="text" id="carteGraphique" name="carteGraphique" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="carteGraphique" required #carteGraph="ngModel">
+            </div>
+            
+            <div *ngIf="carteGraph.invalid && carteGraph.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Proccesseur </label>
+                <input type="text" id="processeur" name="processeur" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="processeur" required #process="ngModel">
+            </div>
+            
+            <div *ngIf="process.invalid && process.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">type disque </label>
+                <input type="text" id="typeDisque" name="typeDisque" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="typeDisque" required #typeDisq="ngModel">
+            </div>
+            
+            <div *ngIf="typeDisq.invalid && typeDisq.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">taille disque </label>
+                <input type="number" id="tailleDisque" name="tailleDisque" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="tailleDisque" required #tailleDis="ngModel">
+            </div>
+            
+            <div *ngIf="tailleDis.invalid && tailleDis.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">taille carte graphique </label>
+                <input type="text" id="tailleCarteGraphique" name="tailleCarteGraphique" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="tailleCarteGraphique" required #tailleCarte="ngModel">
+            </div>
+            
+            <div *ngIf="tailleCarte.invalid && tailleCarte.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">taille écran </label>
+                <input type="number" id="tailleEcran" name="tailleEcran" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="tailleEcran" required #tailleEcr="ngModel">
+            </div>
+            
+            <div *ngIf="tailleEcr.invalid && tailleEcr.touched" class="alert alert-danger">Champ obligatoire</div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div *ngIf="(art=='carte mère')">
+            <div class="form-group">
+                <label for="q">ddr </label>
+                <input type="text" id="ddrCarte" name="ddrCarte" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="ddrCarte" required #ddrCart="ngModel">
+            </div>
+            
+            <div *ngIf="ddrCart.invalid && ddrCart.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Format </label>
+                <input type="text" id="formatCarte" name="formatCarte" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="formatCarte" required #formatCart="ngModel">
+            </div>
+            
+            <div *ngIf="formatCart.invalid && formatCart.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Wattage </label>
+                <input type="text" id="wattageCarte" name="wattageCarte" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="wattageCarte" required #wattageCart="ngModel">
+            </div>
+            
+            <div *ngIf="wattageCart.invalid && wattageCart.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Slot RAM </label>
+                <input type="number" id="slotRam" name="slotRam" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="slotRam" required #slotRAM="ngModel">
+            </div>
+            
+            <div *ngIf="slotRAM.invalid && slotRAM.touched" class="alert alert-danger">Champ obligatoire</div>
+        </div>
+        <div *ngIf="(art=='disque dur')">
+            <div class="form-group">
+                <label for="q">Capacité </label>
+                <input type="number" id="capacite" name="capacite" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="capacite" required #cap="ngModel">
+            </div>
+            
+            <div *ngIf="cap.invalid && cap.touched" class="alert alert-danger">Champ obligatoire</div>
+            <div class="form-group">
+                <label for="q">Type dique dur </label>
+                <input type="text" id="typeDisqueDur" name="typeDisqueDur" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="typeDisqueDur" required #DisqueDur="ngModel">
+            </div>
+            
+            <div *ngIf="DisqueDur.invalid && DisqueDur.touched" class="alert alert-danger">Champ obligatoire</div>
+        </div>
+        <div *ngIf="(art=='boitier')">
+            <div class="form-group">
+                <label for="q">Format </label>
+                <input type="text" id="formatBoitier" name="formatBoitier" placeholder="Entrer une quantité" class="form-control" [(ngModel)]="formatBoitier" required #formatBoit="ngModel">
+            </div>
+            
+            <div *ngIf="formatBoit.invalid && formatBoit.touched" class="alert alert-danger">Champ obligatoire</div>
+        </div>
+      
+        <div class="form-group">
+             <button type ="submit"class='btn btn-success float-right ' [disabled]="f.invalid">Ajouter</button> 
+        </div>
+
     </div>
-    </form>
+    </div>
+    </div>
+</form>

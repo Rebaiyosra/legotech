@@ -125,6 +125,46 @@ export class ArticlesService {
       tailleEcran:12
 
     },
+    {
+      id:"pc11",
+      nom:"Pc ASUS",
+      prix:1650,
+      image:'../../assets/asus.jpg',
+      desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      qte:10,
+      marque:"ASUS",
+      type:"Pc",
+      etat:"occassion",
+      typeRam:"ram 1",
+      tailleRam:8,
+      carteGraph:"carte graphique 1",
+      processeur:"processeur",
+      typeDis:"ddr3",
+      tailleDis:8,
+      tailleCarteGraph:"taille carte graphique",
+      tailleEcran:12
+
+    },
+    {
+      id:"pc11",
+      nom:"Pc ASUS",
+      prix:1650,
+      image:'../../assets/asus.jpg',
+      desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      qte:10,
+      marque:"ASUS",
+      type:"Pc",
+      etat:"occassion",
+      typeRam:"ram 1",
+      tailleRam:8,
+      carteGraph:"carte graphique 1",
+      processeur:"processeur",
+      typeDis:"ddr3",
+      tailleDis:8,
+      tailleCarteGraph:"taille carte graphique",
+      tailleEcran:12
+
+    },
    {
     id:"b11",
     nom:"BlocAlimentation 1",
@@ -167,7 +207,7 @@ export class ArticlesService {
     qte:10,
     marque:"Macro",
     type:"Carte mère",
-    ddr:"ddr3",
+    ddrCarte:"ddr3",
     formatCarte:"format 1",
     wattageCarte:12,
     slotRam:12
@@ -192,6 +232,16 @@ export class ArticlesService {
  
  }
  
+  public getProduitById(id:string){
+    for (let i=0;i<this.lesAcc.length;i++)
+    {
+      if(this.lesAcc[i].id==id)
+      return this.lesAcc[i];
+    }
+    
+    return null as any;
+
+ }
  public getProduitByType(type:string){
   for (let i=0;i<this.lesAcc.length;i++)
   {
@@ -202,16 +252,8 @@ export class ArticlesService {
   return null as any;
 
 }
-
-  public getProduitById(id:string){
-    for (let i=0;i<this.lesAcc.length;i++)
-    {
-      if(this.lesAcc[i].id==id)
-      return this.lesAcc[i];
-    }
-    
-    return null as any;
-
+ public onGetArticle(id:string){
+   return this.lesAcc.find(x=>x.id===id);
  }
  public supprimer(ref:string){
   for (let i=0;i<this.lesAcc.length;i++){

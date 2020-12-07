@@ -1,6 +1,10 @@
 import { Component, OnInit ,Input} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
+
 import { AccesoireInfo } from '../Models/AccessoireInfo';
 import { Article } from '../Models/Article';
+import { Pc } from '../Models/Pc';
 import { ArticlesService } from '../Services/articles.service';
 
 @Component({
@@ -9,14 +13,24 @@ import { ArticlesService } from '../Services/articles.service';
   styleUrls: ['./articles-list.component.css']
 })
 export class ArticlesListComponent implements OnInit {
-
-  articles ?: any[];
+ 
+  acc !:any [];
   
-  constructor(private articlesService:ArticlesService) { }
 
+ types:string[]=[];
+ art?:string;
+ 
+ 
+  constructor(private articlesService:ArticlesService,private activatedRoute:ActivatedRoute,private router:Router) { }
+ 
+ 
   ngOnInit(): void {
-   this.articles= this.articlesService.onAffiche();
+   this.acc= this.articlesService.onAffiche();
+   this.types=this.articlesService.onRemplir();
+   this.art=this.types[0];
   }
+ 
+ 
   @Input() id!:string;
   @Input() nom!:String;
   @Input() image!:String;
@@ -25,4 +39,18 @@ export class ArticlesListComponent implements OnInit {
   @Input() qte!:number;
   @Input() desc!:string;
   @Input() marque!:string;
+  @Input() Etat!:string;
+  @Input() typeRam!:string;
+  @Input() tailleRam!:number;
+  @Input() carteGraphique!: string;
+  @Input() proccesseur!:string;
+  @Input() typeDisque!:string;
+  @Input() tailleDisque!:number;
+  @Input() tailleCarteGraph!:string;
+  @Input() tailleEcran!:string;
+  onSupp(id:string){
+    this.articlesService.supprimer(id);
+  }
+  
 }
+
