@@ -214,10 +214,17 @@ export class ArticlesService {
    }
   ]
  types:string[]=[];
+ acc: any[] | undefined;
 
   onAffiche(){
     return this.lesAcc;
   }
+
+   /* var result = this.lesAcc.find(obj => {
+      return obj.type === "accessoires"
+    });
+    return result;*/
+
  onRemplir()
  {  this.types=[]
  
@@ -242,16 +249,7 @@ export class ArticlesService {
     return null as any;
 
  }
- public getProduitByType(type:string){
-  for (let i=0;i<this.lesAcc.length;i++)
-  {
-    if(this.lesAcc[i].type==type)
-    return this.lesAcc[i];
-  }
-  
-  return null as any;
-
-}
+ 
  public onGetArticle(id:string){
    return this.lesAcc.find(x=>x.id===id);
  }
