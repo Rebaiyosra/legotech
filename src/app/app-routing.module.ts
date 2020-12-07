@@ -18,6 +18,7 @@ import { LegoteurComponent } from './legoteur/legoteur.component';
 import { PcOccassionComponent } from './pc-occassion/pc-occassion.component';
 import { ListePcOccComponent } from './liste-pc-occ/liste-pc-occ.component';
 import { DetailArticleResComponent } from './detail-article-res/detail-article-res.component';
+import { TousCategoriesComponent } from './categories/tous-categories/tous-categories.component';
 const routes: Routes = [
   {path:'legoteur',component:LegoteurComponent },
   {path:'register-utilisateur', component:RegisterUtilisateurComponent},
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:'liste-article/:id',component:ModifierArticleComponent },
   {path:'modifier-article',component:ModifierArticleComponent },
   {path:'acceuil-utilisateur',component:AcceuilUtilisateurComponent },
+  {path:'tousCategories',component:TousCategoriesComponent },
   {path:'ordinateurs',component:OrdinateursComponent },
   {path:'imprimantes',component:ImprimantesComponent },
   {path:'accessoires',component:AccessoiresComponent },

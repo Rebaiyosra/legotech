@@ -28,6 +28,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MenuUtilisateurComponent} from './menu-utilisateur/menu-utilisateur.component';
+import { TousCategoriesComponent } from './categories/tous-categories/tous-categories.component';
 
 
 
@@ -57,6 +58,7 @@ import {MenuUtilisateurComponent} from './menu-utilisateur/menu-utilisateur.comp
     ErreurComponent,
     FooterComponent,
     LegoteurComponent,
+    TousCategoriesComponent,
     
   ],
   imports: [
