@@ -225,6 +225,7 @@ export class ArticlesService {
    }
   ]
  types:string[]=[];
+ acc:any[]=[];
 
   onAffiche(){
     return this.lesAcc;

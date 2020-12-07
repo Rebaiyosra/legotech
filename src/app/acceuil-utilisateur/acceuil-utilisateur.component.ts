@@ -14,11 +14,9 @@ export class AcceuilUtilisateurComponent implements OnInit {
   articles ?: any[];
   
   
-  
   constructor(private articlesService:ArticlesService) { }
 
-  slidesacc: any = [[]];
-  slidespc: any = [[]];
+  slidesart: any = [[]];
   chunk(arr: any, chunkSize: any) {
     let R = [];
     for (let i = 0, len = arr.length; i < len; i += chunkSize) {
@@ -28,8 +26,7 @@ export class AcceuilUtilisateurComponent implements OnInit {
   }
   ngOnInit(): void {
    this.articles= this.articlesService.onAffiche();
-   this.slidesacc = this.chunk(this.articles, 3);
-   this.slidespc = this.chunk(this.articles, 3);
+   this.slidesart = this.chunk(this.articles, 3);
   }
   @Input() id!:string;
   @Input() nom!:String;
