@@ -24,6 +24,17 @@ export class ArticlesService {
       typeAcc:"souris"
     },
     {
+      id:"a11",
+      nom:"imprimante",
+      prix:160,
+      image:'../../assets/imprimante.jpg',
+      desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
+      qte:10,
+      marque:"Macro",
+      type:"accessoires",
+      typeAcc:"imprimantes"
+    },
+    {
       id:"a12",
       nom:"clavier",
       prix:26.500,
@@ -126,13 +137,13 @@ export class ArticlesService {
 
     },
     {
-      id:"pc11",
-      nom:"Pc ASUS",
-      prix:1650,
-      image:'../../assets/asus.jpg',
+      id:"pc12",
+      nom:"Pc DELL",
+      prix:1250,
+      image:'../../assets/dell.jpg',
       desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
       qte:10,
-      marque:"ASUS",
+      marque:"DELL",
       type:"Pc",
       etat:"occassion",
       typeRam:"ram 1",
@@ -146,13 +157,13 @@ export class ArticlesService {
 
     },
     {
-      id:"pc11",
-      nom:"Pc ASUS",
-      prix:1650,
-      image:'../../assets/asus.jpg',
+      id:"pc13",
+      nom:"Pc HP",
+      prix:1400,
+      image:'../../assets/hp.jpg',
       desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed luctus ex.Donec eu aliquam augue. Nunc eros ipsum, ultricies ut facilisis at, faucibus ac mi.",
       qte:10,
-      marque:"ASUS",
+      marque:"HP",
       type:"Pc",
       etat:"occassion",
       typeRam:"ram 1",
@@ -214,7 +225,6 @@ export class ArticlesService {
    }
   ]
  types:string[]=[];
- acc: any[] | undefined;
 
   onAffiche(){
     return this.lesAcc;
