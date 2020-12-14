@@ -128,12 +128,12 @@ export class ArticlesService {
       etat:"nouveau",
       typeRam:"ram 1",
       tailleRam:8,
-      carteGraph:"carte graphique 1",
-      processeur:"processeur",
+      carteGraph:"Nvidia GeForce MX110 (2 Go de mémoire dédiée)",
+      processeur:"Intel Core i5-8250U (1.60 GHz up to 3.40 GHz 6 Mo de mémoire cache, Quad-Core)",
       typeDis:"ddr3",
       tailleDis:8,
       tailleCarteGraph:"taille carte graphique",
-      tailleEcran:12
+      tailleEcran:15.6
 
     },
     {

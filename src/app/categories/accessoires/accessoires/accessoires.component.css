@@ -1,4 +1,53 @@
+.social-box .box{
+    background: #FFF;
+    border-radius: 20px; 
+    padding: 10px 10px;
+    margin: 20px 0px;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+.m{
+    margin-right: 3%;
+    margin-left: 3%;
+    width: 310px;
+}
+
+div .mini-box{
+    background-color: #f2f2f2;
+    height: 300px;
+}
+.social-box .box:hover{
+   box-shadow: 0 0 6px #4183D7;
+}
+
+.social-box .box .box-text{
+    margin:20px 0px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.social-box .box .box-btn a{
+    text-decoration: none;
+    color: #4183D7;
+    font-size: 16px;
+}
+.btn{
+    border-radius: 25px;
+    margin-bottom:10px ;
+}
+
 img{
-    height: 10%;
-    width: 10%;
+    width:200px;
+    height: 200px;
+}
+.prix{
+    color:#3F38C3;
+ 
+}
+div .dispo{
+    color:green;
+}
+div .nonDispo{
+    color:red;
 }

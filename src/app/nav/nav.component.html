@@ -1,0 +1,65 @@
+<!--<div class="d-flex justify-content-around mb-3">
+    <div class="dropdown"><a class="p-2 dropbtn" href="javascript:void(0)" [routerLink]="['/tousCategories']">Toutes Catégories</a>
+      <div class="dropdown-content">
+        <a class="dropdown-item" [routerLink]="['/ordinateurs']">Ordinateurs</a>
+        <a class="dropdown-item" [routerLink]="['/imprimantes']">Imprimantes</a>
+        <div class="dropdown dropright">
+          <a class="dropdown-item dropdown-toggle" data-toggle="dropdown" [routerLink]="['/accessoires']">Accessoires</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Souris</a>
+            <a class="dropdown-item" href="#">Clavier</a>
+            <a class="dropdown-item" href="#">USB</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="p-2" [routerLink]='["/liste-occassion"]'>Ordinateurs Occasion</a>
+    <a class="p-2" [routerLink]="['/legoteur']">Legoteur</a>
+    <a class="p-2" >Service Après Vente</a>
+</div>-->
+
+<nav>
+    <div class="wrapper">
+      <ul class="nav-links">
+        <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+        <li><a [routerLink]="['/acceuil-utilisateur']">Acceuil</a></li>
+        <li><a [routerLink]='["/liste-occassion"]'>Ordinateurs Occasion</a></li>
+        <li><a class="desktop-item" [routerLink]="['/legoteur']">Legoteur</a></li>
+        <li>
+          <a class="desktop-item" [routerLink]="['/tousCategories']">Tous Catégories</a>
+          <input type="checkbox" id="showMega">
+          <label for="showMega" class="mobile-item">Tous Catégories</label>
+          <div class="mega-box">
+            <div class="content">
+              <div class="row">
+                <img src="../../assets/images/digital.png" alt="">
+              </div>
+              <div class="row">
+                <header><a [routerLink]="['/ordinateurs']">Ordinateurs</a></header>
+                <ul class="mega-links">
+                  <li><a href="#">Ordinateur Portable</a></li>
+                  <li><a href="#">Ordinateur de Bureau</a></li>
+                </ul>
+              </div>
+              <div class="row">
+                <header><a [routerLink]="['/accessoires']">Accessoires</a></header>
+                <ul class="mega-links">
+                  <li><a href="#">Souris</a></li>
+                  <li><a href="#">Claviers</a></li>
+                  <li><a href="#">Lecteur De Cartes USB</a></li>
+                </ul>
+              </div>
+              <div class="row">
+                <header><a [routerLink]="['/imprimantes']">Imprimantes</a></header>
+                <ul class="mega-links">
+                  <li><a href="#">Imprimante Professionnelle</a></li>
+                  <li><a href="#">Accessoires Imprimantes</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+    </div>
+  </nav>

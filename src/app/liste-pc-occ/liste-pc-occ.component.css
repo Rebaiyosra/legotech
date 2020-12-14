@@ -5,6 +5,12 @@ h3{
     font-family: 'Poppins', sans-serif;
 }
 
+.m{
+    margin-right: 3%;
+    margin-left: 3%;
+    width: 310px;
+}
+
 .social-box .box{
     background: #FFF;
     border-radius: 20px; 

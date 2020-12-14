@@ -30,6 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MenuUtilisateurComponent} from './menu-utilisateur/menu-utilisateur.component';
 import { TousCategoriesComponent } from './categories/tous-categories/tous-categories.component';
 import { VoirDetailsComponent } from './voir-details/voir-details.component';
+import { NavComponent } from './nav/nav.component';
 
 
 
@@ -61,6 +62,7 @@ import { VoirDetailsComponent } from './voir-details/voir-details.component';
     LegoteurComponent,
     TousCategoriesComponent,
     VoirDetailsComponent,
+    NavComponent,
     
   ],
   imports: [

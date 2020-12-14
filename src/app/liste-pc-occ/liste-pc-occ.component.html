@@ -8,7 +8,7 @@
     <div class="container">
      	<div class="row">
 			<ng-container *ngFor="let a of articles">
-			    <div class="col-lg-4 col-xs-12 text-center"  *ngIf="(a.type==='Pc') && (a.etat==='occassion') ">
+			    <div class="col-xs-12 text-center m"  *ngIf="(a.type==='Pc') && (a.etat==='occassion') ">
 					<div class="box" (click)="articleDetails(a.id)">
 						<div class="box-title">
 							<img [src]='"assets/"+a.image+""'>
@@ -36,9 +36,8 @@
                         <div class="box-btn" *ngIf="a.qte===0">
 							<button  class="btn btn-success" disabled ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Ajouter au panier</button>
 						</div>
+						</div>
 					</div>
-			
-					 </div>
                 </div>	
             </ng-container>      
 		</div>		
