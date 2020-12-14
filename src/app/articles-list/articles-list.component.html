@@ -36,12 +36,12 @@
                 <td>{{a.qte}}</td>
                 
                 <td>
-                    <a   [routerLink]="[a.id]"  class='btn btn-primary'>
+                    <button  (click)="articleDetails(a.id)"  class='btn btn-primary'>
                         <i class="fa fa-info-circle" aria-hidden="true"></i>
-                    </a>
-                    <a   [routerLink]="[a.id]"  class='btn btn-success'>
+                    </button>
+                    <button  (click)="articleModifier(a.id)"   class='btn btn-success'>
                             <i class="fa fa-pencil-square-o" aria-hidden="true" ></i>
-                    </a>
+                    </button>
                     <button (click)="onSupp(id)" class='btn btn-danger'>
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>

@@ -29,6 +29,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MenuUtilisateurComponent} from './menu-utilisateur/menu-utilisateur.component';
 import { TousCategoriesComponent } from './categories/tous-categories/tous-categories.component';
+import { VoirDetailsComponent } from './voir-details/voir-details.component';
 
 
 
@@ -59,6 +60,7 @@ import { TousCategoriesComponent } from './categories/tous-categories/tous-categ
     FooterComponent,
     LegoteurComponent,
     TousCategoriesComponent,
+    VoirDetailsComponent,
     
   ],
   imports: [

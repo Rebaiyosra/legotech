@@ -1,0 +1,63 @@
+img 
+{
+    width:400px;
+    height: 400px; 
+}  
+.card 
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 3em;
+    line-height: 1.5em;
+}
+.product-title
+{
+    color: royalblue;
+}
+.ref
+{
+    color:grey;
+}
+.price
+{
+    color:red
+}
+.product-title, .price, .sizes, .colors 
+{
+    text-transform: UPPERCASE;
+    
+}
+.product-title, .rating, .product-description, .price, .vote, .sizes 
+{
+    margin-bottom: 15px; 
+}
+.size 
+{
+    margin-right: 10px; 
+}
+.btn{
+    height: 45px;    
+    width:160px;
+    margin-right: 20px;
+}
+.action{
+    margin-top: 20px;
+}
+.size:first-of-type 
+{
+      margin-left: 40px; 
+}
+.quantite
+{
+    width:50px
+}
+div .dispo{
+    color:green;
+}
+div .nonDispo{
+    color:red;
+}  
+div{
+    font-size: 17px;
+} 
+  

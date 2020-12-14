@@ -9,21 +9,27 @@ import { ArticlesService } from '../Services/articles.service';
 })
 export class ListePcOccComponent implements OnInit {
   articles ?: any[];
-  
-  constructor(private articlesService:ArticlesService) { }
 
-  ngOnInit(): void {
-   this.articles= this.articlesService.onAffiche();
-  }
-  @Input() id!:number;
+   @Input() id!:number;
   @Input() nom!:String;
   @Input() image!:String;
   @Input() categorie!: String;
   @Input() prix!:number;
   @Input() qte!:number;
   @Input() desc!:string;
+  constructor(private articlesService:ArticlesService,private router:Router) { }
 
-  
+  ngOnInit(): void {
+   this.articles= this.articlesService.onAffiche();
+   
+    
+  }
+  articleDetails(id:string){
+    this.router.navigate(['voir',id]);
+}
+
+ 
+  }
    
 
-}
+

@@ -1,0 +1,47 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<app-menu-utilisateur></app-menu-utilisateur>
+	<div class="container">
+		<div class="card">
+			<div class="container-fliud">
+                <ng-container *ngFor="let a of lesArticles">
+				<div class="wrapper row" *ngIf="(a.id==identifiant)">
+                    
+					<div class="preview col-md-6">
+						
+						<div class="pic">
+						  <div class="tab-pane active" id="pic-1"><img src="{{a.image}}"></div>
+						 
+						</div>	
+					</div>
+					<div class="details col-md-6">
+						<h3 class="product-title">{{a.nom}}</h3>
+						<p class="ref"> <b>Référence </b>: {{a.id}}</p>
+						<p class="product-description">{{a.desc}}</p>
+						<h4 class="price">{{a.prix}} TND</h4>
+						<div>
+                            Disponibilité : 
+                            <span class="dispo" *ngIf="a.qte>0">
+                                En stock
+                            </span>
+                            <span class="nonDispo" *ngIf="a.qte===0">
+                                Hors stock
+                            </span>
+                        </div>
+                       
+						<div class="action">
+                            <span class="btn btn-secondary"> Quantité : 
+                            <input type="number" min="1" value="1" class="quantite"/>	</span>
+							<button class="btn btn-primary" > <i class="fa fa-shopping-cart" aria-hidden="true"></i> Ajouter au panier</button>	
+						</div>
+                    </div>
+                    
+                </div>
+            </ng-container>
+			</div>
+		</div>
+	</div>
+
+    <app-footer></app-footer>

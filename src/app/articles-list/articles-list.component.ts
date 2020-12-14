@@ -30,7 +30,12 @@ export class ArticlesListComponent implements OnInit {
    this.art=this.types[0];
   }
  
- 
+  articleDetails(id:string){
+      this.router.navigate(['detail-article',id]);
+  }
+  articleModifier(id:string){
+    this.router.navigate(['modifier-article',id]);
+  }
   @Input() id!:string;
   @Input() nom!:String;
   @Input() image!:String;

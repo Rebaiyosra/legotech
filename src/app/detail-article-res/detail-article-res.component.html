@@ -14,11 +14,12 @@
         <li class="list-group-item" >
             <span >type: </span>{{a.type}}
         </li>
+
         <li class="list-group-item">
            <span>Nom de l'article: </span>{{a.nom }}
         </li>
         <li class="list-group-item">
-            <span>Prix: </span>{{a.prix}}
+            <span>Prix: </span>{{a.prix | currency:"TND":"symbol"}}
         </li>
         
         <li class="list-group-item">
