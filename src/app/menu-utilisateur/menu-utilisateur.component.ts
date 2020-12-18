@@ -11,5 +11,5 @@ export class MenuUtilisateurComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  nbre:number=0;
 }

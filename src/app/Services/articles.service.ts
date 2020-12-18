@@ -226,6 +226,27 @@ export class ArticlesService {
   ]
  types:string[]=[];
  acc:any[]=[];
+/********************  PANIER  ************************/ 
+cardItem=[
+  {
+    image:'../../assets/souris.jpg',
+    nom:'souris',
+    prix:6.500,
+    qte:1
+  },
+  {
+    image:'../../assets/clavier.jpg',
+    nom:'clavier',
+    prix:16.500,
+    qte:1
+  }
+];
+onAfficheCard(){
+  return this.cardItem;
+}
+/*********************** PANIER **************************/ 
+
+
 
   onAffiche(){
     return this.lesAcc;

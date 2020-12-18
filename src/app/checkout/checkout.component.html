@@ -1,0 +1,195 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container">
+  
+  
+    <div class="row">
+      <div class="col-md-4 order-md-2 mb-4">
+       
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-condensed" *ngFor="let p of cardItem">
+            <div>
+                <img [src]='"assets/"+p.image+""' >
+                <div class="cart-value">
+                    {{p.qte}}
+                </div>
+              <span class="my-0">{{p.nom}}</span>
+            </div>
+            <span class="text-muted"> {{p.prix}} TND</span>
+          </li>
+        </ul>
+        <p>
+            Sous Total : <span class="float-right">{{Total}} TND</span>
+        </p>
+        <p>
+            Livraison : <span class="float-right">{{Livraison}} TND</span>
+        </p>
+        <hr>
+        <p>
+            Total : <span class="float-right">{{prixTot}} TND</span>
+        </p>
+      </div>
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Adresse de Livraison</h4>
+        <form class="needs-validation" >
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Nom</label>
+              <div class="form-group">
+                <input type="text" id="firstName" class="form-control"  name="name" #nom="ngModel"  [(ngModel)]="name" required/>
+            </div>
+            <div [hidden]="!nom.errors?.required || nom?.pristine" class="alert alert-danger">
+                le nom  est un champ obligatoire
+            </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Prenom</label>
+              <div class="form-group">
+                <input type="text" name="prenom" id="lastName"  class="form-control" [(ngModel)]="prenom" required #pre="ngModel">
+        </div>
+        <div [hidden]="!pre.errors?.required || pre.pristine" class="alert alert-danger">
+            La prenom est un champ obligatoire
+        </div>
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="username">E-mail</label>
+          
+              
+              <div class="form-group">
+                <input type="email" class="form-control" id="username" placeholder="E-mail *" name="mail" #email="ngModel" required [(ngModel)]="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+            </div>
+
+            <div *ngIf="email.errors?.pattern && email.touched" class="alert alert-danger">
+                E-mail doit être sous forme "characters@characters.domain"
+            </div>
+            </div>
+        
+  
+        
+  
+          <div class="mb-3">
+            <label for="address">Address</label>
+            <div class="form-group">
+                <input type="text"  name="adresse" id="address" class="form-control" placeholder="adresse *" required #ad="ngModel" [(ngModel)]="adresse" />
+            </div>
+            <div [hidden]="!ad.errors?.required || ad.pristine" class="alert alert-danger">
+                L'adresse  est un champ obligatoire
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="address2">Addresse 2 <span class="text-muted">(Optionelle)</span></label>
+            <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+          </div>
+  
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="country">Etat</label>
+              <div class="form-group">
+                <select class="form-control" [(ngModel)]="gouvernorat" [ngModelOptions]="{standalone: true}">
+                    <option class="hidden"  selected disabled >Etat </option>
+                    <option>Ariana</option>
+                    <option>Béja</option>
+                    <option>Ben Arous</option>
+                    <option>Bizertz</option>
+                    <option>Gabès</option>
+                    <option>Gafsa</option>
+                    <option>Jendouba</option>
+                    <option>Kébilli</option>
+                    <option>La Manouba</option>
+                    <option>La Kef</option>
+                    <option>Mahdia</option>
+                    <option>Médnine</option>
+                    <option>Monastir</option>
+                    <option>Nabeul</option>
+                    <option>Sfax</option>
+                    <option>Sidi Bouzid</option>
+                    <option>Siliana</option>
+                    <option>Sousse</option>
+                    <option>Tataouine</option>
+                    <option>Tozeur</option>
+                    <option>Tunis</option>
+                    <option>Zaghouan</option>
+                </select>
+            </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="state">Ville</label>
+             
+              <div class="form-group">
+                <input type="text"  id="state" name="ville" class="form-control" required #vl="ngModel" [(ngModel)]="ville"  />
+            </div>
+            <div [hidden]="!vl.errors?.required || vl.pristine" class="alert alert-danger">
+                Le ville est un champ obligatoire
+            </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="zip">Code postal</label>
+              <div class="form-group">
+                <input type="text" id="zip" name="codeP" class="form-control"  required #code="ngModel" pattern="[0-9]{4}" [(ngModel)]="codeP"  />
+            </div>
+            <div *ngIf="code.errors?.pattern && code.touched" class="alert alert-danger">
+                Le code Postal doit contenir 4 chiffres
+            </div>
+            </div>
+          </div>
+         
+          <hr class="mb-4">
+  
+          <h4 class="mb-3">Paiement</h4>
+  
+          <div class="d-block my-3">
+            <div class="custom-control custom-radio">
+              <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+              <label class="custom-control-label" for="credit">Credit card</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+              <label class="custom-control-label" for="debit">Debit card</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+              <label class="custom-control-label" for="paypal">PayPal</label>
+            </div>
+          </div>
+        
+            
+            <div class=" mb-3">
+              <label for="cc-number">Numéro de la carte</label>
+              <div class="form-group">
+                 <input type="password"  id="cc-number" name="numCard" class="form-control"  required #num="ngModel"  [(ngModel)]="numCard"  >
+                </div>
+                 <div [hidden]="!num.errors?.required || num.pristine" class="alert alert-danger">
+                Le numéro de la carte est un champ obligatoire
+            </div>
+            </div>
+         
+          <div class="row">
+            <div class="col-md-3 mb-3">
+              <label for="cc-expiration">Date d'expiration</label>
+              <div class="form-group">
+              <input type="date" class="form-control" id="cc-expiration" required>
+              </div>
+             
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="cc-cvv">Code de sécurité</label>
+              <div class="form-group">
+              <input type="password" class="form-control" id="cc-cvv"  required>
+              </div>
+              
+            </div>
+          </div>
+          <hr class="mb-4">
+          <a [routerLink]="['/panier']">Retour au panier</a>
+          <button class="btn btn-primary float-right" type="submit"  [routerLink]="['/confirmer']">Continuer Vers l'expédition</button>
+        </form>
+      </div>
+    </div>
+  
+    
+  </div>

@@ -22,9 +22,6 @@
     <div class="wrapper">
       <ul class="nav-links">
         <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-        <li><a [routerLink]="['/acceuil-utilisateur']">Acceuil</a></li>
-        <li><a [routerLink]='["/liste-occassion"]'>Ordinateurs Occasion</a></li>
-        <li><a class="desktop-item" [routerLink]="['/legoteur']">Legoteur</a></li>
         <li>
           <a class="desktop-item" [routerLink]="['/tousCategories']">Tous Catégories</a>
           <input type="checkbox" id="showMega">
@@ -59,6 +56,9 @@
             </div>
           </div>
         </li>
+        <li><a [routerLink]='["/liste-occassion"]'>Ordinateurs Occasion</a></li>
+        <li><a class="desktop-item" [routerLink]="['/legoteur']">Legoteur</a></li>
+       
       </ul>
       <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
     </div>

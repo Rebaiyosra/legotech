@@ -20,10 +20,16 @@ import { ListePcOccComponent } from './liste-pc-occ/liste-pc-occ.component';
 import { DetailArticleResComponent } from './detail-article-res/detail-article-res.component';
 import { TousCategoriesComponent } from './categories/tous-categories/tous-categories.component';
 import { VoirDetailsComponent } from './voir-details/voir-details.component';
+import { PanierComponent } from './panier/panier.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { FinCommandeComponent } from './fin-commande/fin-commande.component';
 const routes: Routes = [
   {path:'legoteur',component:LegoteurComponent },
   {path:'register-utilisateur', component:RegisterUtilisateurComponent},
   {path:'voir/:id',component:VoirDetailsComponent},
+  {path:'checkout',component:CheckoutComponent},
+  {path:'confirmer',component:FinCommandeComponent},
+  {path:'panier',component:PanierComponent},
   {path:'register-responsable', component:RegisterResponsableComponent},
   {path:'sign-utilisateur', component:SignInUtilisateurComponent},
   {path:'sign-res', component:SignInResComponent},

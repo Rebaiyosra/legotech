@@ -1,0 +1,28 @@
+.container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+img{
+    height: 80px;
+    width: 80px;
+}
+.quantite{
+    width:50px
+}
+td .fa{
+    font-size: 24px;
+}
+div .total{
+    text-align: center;
+    font-size: 22px;
+    color:brown
+}
+.button
+{
+    position: relative;
+    left:34%;
+}
+.btn{
+    margin-right: 15px;
+    border-radius: 25px;
+}

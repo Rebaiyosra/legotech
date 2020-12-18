@@ -31,6 +31,9 @@ import {MenuUtilisateurComponent} from './menu-utilisateur/menu-utilisateur.comp
 import { TousCategoriesComponent } from './categories/tous-categories/tous-categories.component';
 import { VoirDetailsComponent } from './voir-details/voir-details.component';
 import { NavComponent } from './nav/nav.component';
+import { PanierComponent } from './panier/panier.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { FinCommandeComponent } from './fin-commande/fin-commande.component';
 
 
 
@@ -63,6 +66,9 @@ import { NavComponent } from './nav/nav.component';
     TousCategoriesComponent,
     VoirDetailsComponent,
     NavComponent,
+    PanierComponent,
+    CheckoutComponent,
+    FinCommandeComponent,
     
   ],
   imports: [
