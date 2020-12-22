@@ -34,6 +34,7 @@ import { NavComponent } from './nav/nav.component';
 import { PanierComponent } from './panier/panier.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FinCommandeComponent } from './fin-commande/fin-commande.component';
+import { ComposantsComponent } from './categories/composants/composants.component';
 
 
 
@@ -69,6 +70,7 @@ import { FinCommandeComponent } from './fin-commande/fin-commande.component';
     PanierComponent,
     CheckoutComponent,
     FinCommandeComponent,
+    ComposantsComponent
     
   ],
   imports: [

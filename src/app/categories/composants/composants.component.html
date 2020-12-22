@@ -1,0 +1,58 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<!-----------PROCESSEUR----------------------->
+<div class="social-box">
+    <div class="container">
+     	<div class="row">
+			<ng-container *ngFor="let a of articles">
+                <div *ngIf="a.type==='processeur'" class="col-xs-12 text-center m">
+                    <div class="box" (click)="articleDetails(a.id)">
+                        <div class="box-title">
+                            <img [src]='"assets/"+a.image+""'>
+                        </div>
+                        <div class="mini-box">
+                        <div class="box-text">
+                            <b>{{a.nom}} </b>
+                        </div>
+                        <div>{{a.marque}} - {{a.type}}</div>
+                                        <div class=" dispo" *ngIf="a.qte>0">
+                                            <p>Disponible</p>
+                                        </div>
+                                        <div class="nonDispo" *ngIf="a.qte===0">
+                                            <p>Epuisé</p>
+                                        </div>
+                                        <div class="box-text prix">
+                                            <b>{{a.prix}} TND</b>
+                                        </div>
+                                        <div class="box-btn" *ngIf="a.qte>0">
+                                            <button  class="btn btn-success" > <i class="fa fa-shopping-cart" aria-hidden="true"></i> Ajouter au panier</button>
+                                        </div>
+                                        <div class="box-btn" *ngIf="a.qte===0">
+                                            <button  class="btn btn-success" disabled ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Ajouter au panier</button>
+                                        </div>
+                                    </div>
+                                </div>
+                </div>	
+            </ng-container>      
+		</div>		
+    </div>
+</div>
+<!-----------PROCESSEUR----------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
